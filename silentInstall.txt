@@ -1,0 +1,213 @@
+################################################################################
+#
+# InstallShield Options File Template
+#
+# Wizard name: Setup
+# Wizard source: setup.jar
+# Created on: Fri Feb 07 15:54:31 PST 2003
+# Created by: InstallShield Options File Generator
+#
+# This file can be used to create an options file (i.e., response file) for the
+# wizard "Setup". Options files are used with "-options" on the command line to
+# modify wizard settings.
+#
+# The settings that can be specified for the wizard are listed below. To use
+# this template, follow these steps:
+#
+#    1. Enable a setting below by removing leading '###' characters from the
+#    line (search for '###' to find settings you can change).
+#
+#    2. Specify a value for a setting by replacing the characters '<value>'.
+#    Read each settings documentation for information on how to specify its
+#    value.
+#
+#    3. Save the changes to the file.
+#
+#    4. To use the options file with the wizard, specify -options <file-name>
+#    as a command line argument to the wizard, where <file-name> is the name
+#    of this options file.
+#
+################################################################################
+
+# specify silent install
+-silent
+
+################################################################################
+#
+# License Agreement State
+#
+# The initial state of the License Agreement panel. Legal values are:
+#
+#    0 - Nothing will be selected
+#    1 - "I accept the terms of the license agreement." will be selected
+#    2 - "I do not accept the terms of the license agreement." will be selected
+#
+# For example, to configure the panel to initially display "I do not accept the
+# terms of the license agreement.", use
+#
+#    -W licensePanel.selection=2
+#
+
+
+-W licensePanel.selection=1
+
+
+################################################################################
+#
+# User Input Field - serial number
+#
+# The following serial number is an evaluation license.
+# Replace this value with the serial number that you get from VeriSign.
+
+
+-W bean.serialnumber="NAAVI-LWEVF-AMX7M-3AUFU-UFUMM"
+
+
+################################################################################
+#
+# TrustGateway Install Location
+#
+# The install location of the product. Specify a valid directory into which the
+# product should be installed. If the directory contains spaces, enclose it in
+# double-quotes. For example, to install the product to C:\Program Files\My
+# Product, use
+#    For Windows platform, use
+#    -P installLocation="C:\Program Files\My Product"
+#    For Unix platforms, use
+#    -P installLocation="/opt/TrustGateway"
+
+
+-P installLocation="C:\Program Files\TrustGateway"
+
+
+
+
+################################################################################
+#
+# "TrustGateway server" Feature
+#
+# The selection state of the "TrustGateway server" feature. Legal values are:
+#
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+#
+# For example, to select "TrustGateway server" for installation, use
+#
+#    -P TrustGatewayServerFeature.active=true
+#
+
+
+-P TrustGatewayServerFeature.active=true
+
+
+################################################################################
+#
+# "TrustGateway toolkit" Feature
+#
+# The selection state of the "TrustGateway toolkit" feature. Legal values are:
+#
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+#
+# For example, to select "TrustGateway toolkit" for installation, use
+#
+#    -P TrustGatewayToolkitFeature.active=true
+#
+
+
+-P TrustGatewayToolkitFeature.active=false
+
+
+################################################################################
+#
+# "WS-Security" Feature
+#
+# The selection state of the "WS-Security" feature. Legal values are:
+#
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+#
+# For example, to select "WS-Security" for installation, use
+#
+#    -P WSSecurityFeature.active=true
+#
+
+
+-P WSSecurityFeature.active=true
+
+
+################################################################################
+#
+# "Windows Service" Feature
+#
+# The selection state of the "Windows Service" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Windows Service" for installation, use
+# 
+#    -P WindowsServiceFeature.active=true
+#
+
+
+-P WindowsServiceFeature.active=false
+
+
+################################################################################
+#
+# WS-Security License Agreement State
+#
+# The initial state of the License Agreement panel. Legal values are:
+#
+#    0 - Nothing will be selected
+#    1 - "I accept the terms of the license agreement." will be selected
+#    2 - "I do not accept the terms of the license agreement." will be selected
+#
+# For example, to configure the panel to initially display "I do not accept the
+# terms of the license agreement.", use
+#
+#    -W WSSecLicensePanel.selection=2
+#
+
+
+-W WSSecLicensePanel.selection=1
+
+
+################################################################################
+#
+# User Input Field - adminUserName
+#
+#
+
+
+-W userInput.adminUserName="administrator"
+
+
+################################################################################
+#
+# User Input Field - adminPassword
+#
+#
+
+
+-W userInput.adminPassword="administrator"
+
+
+################################################################################
+#
+# User Input Field - adminPasswordVerify
+#
+#
+
+
+-W userInput.adminPasswordVerify="administrator"
+
+################################################################################
+#
+# User Input Field - Port
+#
+#
+
+
+-W portSelectionBean.Port="8776"

@@ -1,0 +1,202 @@
+VeriSign Trust Gateway Pre-Release 
+Software Evaluation Agreement
+BY CLICKING "I ACCEPT" BELOW OR INSTALLING OR 
+USING THIS SOFTWARE, YOU ARE CONSENTING TO BE 
+BOUND BY AND ARE BECOMING A PARTY TO THIS 
+AGREEMENT, AND ANY APPLICABLE THIRD PARTY LICENSE 
+AGREEMENTS INCLUDED IN THE /DOCS DIRECTORY OF 
+THIS DISK. IF YOU DO NOT AGREE TO ALL OF THE 
+TERMS OF THIS AGREEMENT AND ANY SUCH THIRD PARTY 
+LICENSE AGREEMENTS, DO NOT INSTALL OR USE THE 
+SOFTWARE, OR CLICK "I DO NOT ACCEPT", AND, IF 
+APPLICABLE, RETURN THIS PRODUCT TO VERISIGN. 
+
+This Software License Agreement (the "Agreement") 
+is made between you, both in your own capacity 
+and on behalf of the entity owning and/or 
+controlling the systems with which the software 
+accompanying this Agreement (the "Software") will 
+be used (collectively, "Licensee"), and VeriSign, 
+Inc., a Delaware corporation ("VeriSign").
+1.	DEFINITIONS
+"Pre-Release Software" shall mean the 
+experimental, non-commercial version of the 
+VeriSign Trust Gateway software, including the 
+test certificate included therein, in the form of 
+beta or pre-release version, including all 
+related documentation provided herewith, that may 
+be provided by VeriSign to Licensee hereunder 
+solely for Licensee's internal evaluation and 
+testing purposes as described herein.  Pre-
+Release Software shall not include source code.
+2.	LICENSE AND RESTRICTIONS.   VeriSign grants 
+Licensee a limited, royalty-free, non-exclusive 
+and non-transferable license to use one (1) copy 
+of the Pre-Release Software solely for Licensee's 
+internal evaluation and testing of the Pre-
+Release Software with Licensee's products and 
+services. Licensee may not copy, modify or 
+distribute, decompile, reverse engineer or 
+otherwise attempt to derive the source code of 
+any Pre-Release Software provided to Licensee, or 
+lease, rent, sell or otherwise distribute the 
+Pre-Release Software.  Licensee may not create 
+derivative works of the Pre-Release Software or 
+use any components of the Pre-Release Software 
+separately from the Pre-Release Software. 
+Licensee acknowledges and agrees that VeriSign 
+may update or revise the Pre-Release Software and 
+in so doing may furnish but incurs no obligation 
+to furnish such updates to Licensee, unless 
+VeriSign and Licensee have entered into a 
+separate written agreement for updates.  All Sun 
+Microsystems Inc. ("Sun") Software provided by 
+VeriSign under this Agreement  is subject to the 
+Sun end-user license agreement.  A current copy 
+of the Sun End User License Agreement ("EULA") is 
+provided in the /DOCs folder of this disk or the 
+Trust Gateway directory, which may be amended 
+from time at Sun's sole discretion.  Such Sun 
+EULA shall be between Licensee and Sun and 
+VeriSign makes no representations or guarantees 
+whatsoever with respect to such agreement and 
+disclaims any and all liability as it relates to 
+such Sun EULA and all Sun software provided to 
+Licensee.  
+3.	NO COMMERCIAL USE.  NO COMMERCIAL USE OF 
+THE PRE-RELEASE SOFTWARE PROVIDED HEREUNDER BY OR 
+ON BEHALF OF VERISIGN IS PERMITTED.   
+REDISTRIBUTION OF THE PRE-RELEASE SOFTWARE IS 
+STRICTLY PROHIBITED.  REDISTRIBUTION OF ANY 
+RESULTS CREATED USING THE PRE-RELEASE SOFTWARE IS 
+PROHIBITED.  SUCH RIGHTS MAY ONLY BE GRANTED 
+PURSUANT TO A SEPARATE WRITTEN LICENSE AGREEMENT 
+EXECUTED BY VERISIGN AND LICENSEE AND THEN ONLY 
+AS LICENSED THEREBY.  NO TECHNICAL SUPPORT IS 
+PROVIDED HEREUNDER, AND SHALL ONLY BE PROVIDED 
+PURSUANT TO A SEPARATE WRITTEN AGREEMENT EXECUTED 
+BY THE PARTIES.
+4.	OWNERSHIP.  Licensee acknowledges and 
+agrees that the Pre-Release Software, including 
+any derivative works thereof, are and shall 
+remain the sole and exclusive property of 
+VeriSign and its licensors.  The Pre-Release 
+Software is protected by the copyright laws and 
+treaties.  No rights to use VeriSign's or its 
+licensor's trademarks is granted hereunder. 
+5.	WARRANTY DISCLAIMER.  VERISIGN AND ITS 
+LICENSORS MAKE NO WARRANTY, EXPRESS, IMPLIED OR 
+STATUTORY WITH RESPECT TO THE PRE-RELEASE 
+SOFTWARE (INCLUDING ANY RELATED DOCUMENTATION), 
+INCLUDING WITHOUT LIMITATION THE IMPLIED 
+WARRANTIES OF MERCHANTABILITY, FITNESS FOR 
+PARTICULAR PURPOSE AND NONINFRINGEMENT OF THIRD 
+PARTY RIGHTS, WHICH ARE HEREBY EXPRESSLY 
+DISCLAIMED.  LICENSEE ACKNOWLEDGES THAT VERISIGN 
+HAS NOT REPRESENTED OR WARRANTED THAT THE PRE-
+RELEASE SOFTWARE WILL BE UNINTERRUPTED, ERROR 
+FREE OR WITHOUT DELAY OR WITHOUT INFILTRATION OR 
+COMPROMISE OF ANY SECURITY SYSTEMS RELATED TO THE 
+PRE-RELEASE SOFTWARE.
+7.	LIMITATION OF LIABILITY. IN NO EVENT WILL 
+VERISIGN OR ITS LICENSORS HAVE ANY LIABILITY TO 
+LICENSEE OR ANY OTHER THIRD PARTY FOR ANY LOST 
+OPPORTUNITY OR PROFITS, COSTS OF PROCUREMENT OF 
+SUBSTITUTE GOODS OR SERVICES, OR FOR ANY 
+INDIRECT, INCIDENTAL, CONSEQUENTIAL, PUNITIVE OR 
+SPECIAL DAMAGES ARISING OUT OF THIS AGREEMENT, 
+UNDER ANY CAUSE OF ACTION OR THEORY OF LIABILITY 
+(INCLUDING NEGLIGENCE), AND WHETHER VERISIGN HAS 
+BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.  
+THESE LIMITATIONS WILL APPLY NOTWITHSTANDING ANY 
+FAILURE OF ESSENTIAL PURPOSE OF ANY LIMITED 
+REMEDY.
+8.	TERMINATION.   This Agreement shall 
+continue for sixty (60) days following 
+installation of the Pre-Release Software, unless 
+earlier terminated in accordance with the terms 
+set forth in this Section 8.  This Agreement will 
+terminate immediately if Licensee fails to comply 
+with any provision of this Agreement.  Upon the 
+expiration or termination of this Agreement, all 
+rights granted hereunder shall cease, and 
+Licensee shall destroy all copies of the Pre-
+Release Software.  Notwithstanding the above, 
+Sections 3, 5, 6, 7, 8, 9, 10 and 12 herein shall 
+survive expiration or termination of this 
+Agreement.
+9.	CONFIDENTIALITY.  The Pre-Release Software 
+(including all documentation) provided to 
+Licensee and all documentation or other material 
+provided therewith shall be considered 
+Confidential Information.  Confidential 
+Information shall not include information that 
+(A) is now or subsequently becomes generally 
+available to the public through no fault or 
+breach on the part of Licensee; (B) Licensee can 
+demonstrate to have had rightfully in its 
+possession prior to disclosure to Licensee by 
+VeriSign; (C) is independently developed by the 
+Licensee without the use of or access to any 
+Confidential Information; or (D) Licensee 
+rightfully obtains from a third party who has the 
+right to transfer or disclose it.  Licensee 
+agrees to protect VeriSign's Confidential 
+Information to the same extent it would protect 
+its own confidential information of similar 
+nature, at a minimum using a reasonable degree of 
+care. Licensee agrees to not disclose any 
+Confidential Information of VeriSign to any third 
+party other than its employees or independent 
+contractors that have agreed in writing to 
+maintain the confidence of such Confidential 
+Information and solely on a "need to know" basis.  
+10.	EXPORT.  Licensee acknowledges and agrees 
+that Licensee shall not import, export, or re-
+export directly or indirectly, the Pre-Release 
+Software to any country in violation of the laws 
+and regulations of any applicable jurisdiction, 
+including but not limited to the export 
+regulations of the United States.  VeriSign shall 
+be permitted hereunder to review Licensee's 
+export records relating to the Pre-Release 
+Software as may be required by U.S. law.
+11.	GOVERNMENT CONTRACTS.  If Licensee is a 
+branch or agency of the United States Government, 
+the following provision applies. The Pre-Release 
+Software and any related documentation are 
+comprised of "commercial computer software" and 
+"commercial computer software documentation" as 
+such terms are used in 48 C.F.R. 12.212 (SEPT 
+1995) and are provided to the Government (i) for 
+acquisition by or on behalf of civilian agencies, 
+consistent with the policy set forth in 48 C.F.R. 
+12.212; or (ii) for acquisition by or on behalf 
+of units of the Department of Defense, consistent 
+with the policies set forth in 48 C.F.R. 
+227.7202-1 (JUN 1995) and 227.7202-3 (JUN 1995).
+12.	MISCELANEOUS.  Any action related to this 
+Agreement will be governed by California law, 
+without regard to the conflicts of laws 
+principles thereof. The parties hereto agree that 
+this Agreement is made and performed in Santa 
+Clara County, California.  The application of the 
+United Nations Convention of Contracts for the 
+International Sale of Goods is expressly 
+excluded. If any provision of this Agreement is 
+held to be unenforceable, this Agreement will 
+remain in effect with the provision omitted or 
+reformed only to the extent necessary to make it 
+enforceable and the remaining provisions of the 
+Agreement will not be affected in any way.  The 
+section headings appearing in this Agreement are 
+inserted only as a matter of convenience and in 
+no way define, limit, construe or describe the 
+scope or extent of such section or in any way 
+affect such section.  The terms of this Agreement 
+may only be amended by a writing executed by both 
+parties.  This Agreement is not assignable by 
+Licensee. 
+
+Trust Gateway Beta Agremeent (12.18.02).doc	
+VERISIGN CONFIDENTIAL

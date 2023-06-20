@@ -1,0 +1,103 @@
+<qjml root="wizard">
+
+	<element name="wizard">
+		<targetClass>com.installshield.wizard.Wizard</targetClass>
+		<attribute name="name" type="string" property="name"/>
+		<attribute name="uid" status="REQUIRED" type="string" property="id"/>
+		<attribute name="purpose" type="string" property="purpose"/>
+		<child element="title" property="title"/>
+		<child element="listener" property="listenerClassName"/>
+		<child element="interfaceName" property="interfaceName"/>
+		<child element="localeSelect" optional="True" property="localeSelectOption"/>
+		<child element="defaultLocale" optional="True" property="defaultLocale"/>
+		<child element="availableLocales" optional="True" property="availableLocales"/>
+		<child
+				element="home"
+				class="com.installshield.wizard.qjml.QWizardHomeAccess"
+				optional="True"
+				repeating="True"/>		
+		<child 
+				element="interface"
+				class="com.installshield.wizard.qjml.QWizardUIAccess"
+				optional="True"
+				repeating="True"/>
+		<child element="log" optional="True" property="wizardLog"/>
+		<child 
+				element="startupBean"
+				class="com.installshield.wizard.qjml.QStartupBeanAccess"
+				optional="True"
+				repeating="True"/>
+	</element>
+	
+	<element name="log">
+		<targetClass>com.installshield.wizard.service.WizardLog</targetClass>
+		<child 
+			element="property"
+			class="com.installshield.qjml.QPropertyAccess"
+			optional="True"
+			repeating="True"/>
+	</element>
+	
+	<element name="title" content="PCDATA"/>
+	
+	<element name="listener" content="PCDATA"/>
+	
+	<element name="interfaceName" content="PCDATA"/>
+	
+	<element name="localeSelect" content="int"/>
+	
+	<element name="defaultLocale" content="PCDATA"/>
+	
+	<element name="availableLocales" content="PCDATA"/>
+	
+	<element name="home" content="BIMODAL">
+		<targetClass>com.installshield.wizard.qjml.QHomeURL</targetClass>
+		<attribute name="id" type="string" property="id"/>
+		<attribute name="root" type="boolean" value="False" property="root"/>
+	</element>
+		
+	<element name="interface">
+		<targetFactory>com.installshield.wizard.qjml.QWizardUITF</targetFactory>
+		<attribute name="name" status="REQUIRED" type="string" property="name"/>
+		<attribute name="class" status="REQUIRED" type="string" property="className"/>
+		<child
+				element="property"
+				class="com.installshield.wizard.qjml.QWizardUIPropertyAccess"
+				optional="True"
+				repeating="True"/>
+	</element>
+	
+	<element name="startupBean" content="EMPTY">
+		<targetFactory>com.installshield.wizard.qjml.QStartupBeanTF</targetFactory>
+		<attribute name="class" status="REQUIRED" type="string" property="className"/>
+	</element>
+
+	<element name="property" content="BIMODAL">
+		<targetClass>com.installshield.qjml.QProperty</targetClass>
+		<attribute name="name" type="string" status="REQUIRED" property="name"/>
+		<attribute name="type" type="string" property="type" value=""/>
+		<attribute name="array" type="boolean" property="array" value="False"/>
+		<attribute name="length" type="int" property="arrayLength" value="-1"/>
+		<child 
+			element="property"
+			class="com.installshield.qjml.QPropertyAccess"
+			optional="True"
+			repeating="True"/>
+		<child 
+			element="arrayItem"
+			class="com.installshield.qjml.QArrayItemAccess"
+			optional="True"
+			repeating="True"/>
+	</element>
+	
+	<element name="arrayItem" content="BIMODAL">
+		<targetClass>com.installshield.qjml.QArrayItem</targetClass>
+		<attribute name="type" type="string" property="type" value=""/>
+		<child
+				element="property"
+				class="com.installshield.qjml.QPropertyAccess"
+				optional="True"
+				repeating="True"/>		
+	</element>
+	
+</qjml>

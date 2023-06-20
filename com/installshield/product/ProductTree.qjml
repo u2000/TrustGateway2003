@@ -1,0 +1,504 @@
+<qjml root="productTree">
+
+	<element name="productTree">
+		<targetClass>com.installshield.product.ProductTree</targetClass>
+		<child element="uninstaller" property="uninstallerArchive" optional="True"/>
+		<child element="uninstallerLauncher" property="uninstallerLauncher" optional="True"/>
+		<child element="uninstallerJVMResolution" property="uninstallerJVMResolution" optional="True"/>
+		<child element="logFile" property="logFile" optional="True"/>
+		<child element="selectedLocales" property="selectedLocales" optional="True"/>
+		<child element="localeOption" property="localeOption" optional="True"/>
+		<selection
+			class="com.installshield.product.qjml.QProductTreeRootSelAccess"
+			optional="True" 
+			repeating="True">	
+<!-- The order of these elements should not be changed because StaticSuite and Suite are sub-classes of Product -->		
+			<child element="staticSuite"/>
+			<child element="suite"/>
+			<child element="product"/>
+		</selection>
+	</element>
+		
+	<element name="condition">
+		<targetClass>com.installshield.product.qjml.QConditionWrapper</targetClass>
+		<attribute name="id" type="string" status="REQUIRED" property="id"/>
+		<attribute name="type" type="string" status="REQUIRED" property="className"/>
+		<child 
+				element="property" 
+				class="com.installshield.product.qjml.QConditionPropertyAccess" 
+				optional="True" 
+				repeating="True"/>
+	</element>
+	
+	<element name="key">
+		<targetClass>com.installshield.product.SoftwareObjectKey</targetClass>
+		<child element="uid" property="UID"/>
+		<child element="version" property="version"/>
+		<child 
+				element="instance" 
+				optional="True" 
+				class="com.installshield.product.qjml.QKeyInstanceAccess"/>
+	</element>
+	
+	<element name="uid" content="PCDATA"/>
+	
+	<element name="version" content="EMPTY">
+		<targetClass>com.installshield.product.SoftwareVersion</targetClass>
+		<attribute name="major" type="string" property="major"/>
+		<attribute name="minor" type="string" property="minor"/>
+		<attribute name="maintenance" type="string" property="maintenance"/>
+		<attribute name="update" type="string" property="update"/>
+		<attribute name="formatted" type="string" property="formatted"/>
+	</element>
+	
+	<element name="instance" content="PCDATA">
+		<targetClass>java.lang.Integer</targetClass>
+	</element>
+	
+	<element name="built" content="PCDATA">
+		<targetEditor target="java.util.Date" editor="com.installshield.qjml.DateEditor"/>
+	</element>
+	
+	<element name="name" content="PCDATA"/>
+	
+	<element name="displayName" content="PCDATA"/>
+
+	<element name="localizedDisplayName" content="PCDATA"/>
+	
+	<element name="description" content="PCDATA"/>
+	
+	<element name="vendor" content="PCDATA"/>
+	
+	<element name="website" content="PCDATA"/>
+	
+	<element name="number" content="PCDATA"/>
+	
+	<element name="location" content="PCDATA"/>
+	
+	<element name="shareable" content="PCDATA">
+		<targetClass>java.lang.Boolean</targetClass>
+	</element>
+	
+	<element name="visible" content="PCDATA">
+		<targetClass>java.lang.Boolean</targetClass>
+	</element>
+	
+	<element name="installerRef" content="PCDATA"/>	
+
+	<element name="sourceRef" content="PCDATA"/>	
+
+	<element name="uninstallerRef" content="PCDATA"/>	
+	
+	<element name="logFile" content="PCDATA"/>		
+	
+	<element name="selectedLocales" content="PCDATA"/>
+
+	<element name="localeOption" content="int"/>			
+
+	<element name="locale" content="PCDATA"/>
+
+	<element name="buildCategories" content="PCDATA"/>
+		
+	<element name="uninstaller">
+		<targetClass>com.installshield.product.actions.UninstallerArchive</targetClass>
+		<child 
+				element="property" 
+				class="com.installshield.qjml.QPropertyAccess" 
+				optional="True" 
+				repeating="True"/>
+		<child 
+				element="extendedProperty"
+				class="com.installshield.qjml.QExtendedPropertiesAccess"
+				optional="True"
+				repeating="True"/>
+	</element>
+	
+	<element name="uninstallerLauncher">
+		<targetClass>com.installshield.product.actions.UninstallerLauncher</targetClass>
+		<child 
+				element="property" 
+				class="com.installshield.qjml.QPropertyAccess" 
+				optional="True" 
+				repeating="True"/>
+		<child 
+				element="extendedProperty"
+				class="com.installshield.qjml.QExtendedPropertiesAccess"
+				optional="True"
+				repeating="True"/>
+	</element>
+	
+	<element name="uninstallerJVMResolution">
+		<targetClass>com.installshield.product.actions.UninstallerJVMResolution</targetClass>
+		<child 
+				element="property" 
+				class="com.installshield.qjml.QPropertyAccess" 
+				optional="True" 
+				repeating="True"/>
+		<child 
+				element="extendedProperty"
+				class="com.installshield.qjml.QExtendedPropertiesAccess"
+				optional="True"
+				repeating="True"/>
+	</element>
+	
+	<element name="active" content="PCDATA">
+		<targetClass>java.lang.Boolean</targetClass>
+	</element>
+        
+	<element name="activeForUninstall" content="PCDATA">
+		<targetClass>java.lang.Boolean</targetClass>
+	</element>
+
+	<element name="patch" content="PCDATA">
+		<targetClass>java.lang.Boolean</targetClass>
+	</element>
+
+	<element name="installStatus" content="PCDATA">
+	        <targetClass>java.lang.Integer</targetClass>
+	</element>
+	    
+	<element name="replaceOption" content="PCDATA">
+		<targetClass>java.lang.Integer</targetClass>
+	</element>
+	    
+	<element name="removeOption" content="PCDATA">
+		<targetClass>java.lang.Integer</targetClass>
+	</element>
+	    
+	<element name="installFailureOption" content="PCDATA">
+		<targetClass>java.lang.Integer</targetClass>
+	</element>
+	
+	<element name="onFailSummaryMessage" content="PCDATA"/>
+        
+	<element name="required">
+		<targetClass>com.installshield.product.qjml.QRequiredWrapper</targetClass>
+		<child element="key" property="key"/>
+		<child element="resolution" property="resolution"/>
+		<child element="displayName" property="displayName" optional="True"/>
+	</element>
+	
+	<element name="resolution" content="PCDATA">
+		<targetClass>java.lang.Integer</targetClass>
+	</element>
+	
+	<element name="suite">
+		<targetClass>com.installshield.product.DynamicSuite</targetClass>
+		<attribute name="id" type="string" status="REQUIRED" property="beanId"/>
+		<child element="key" property="key"/>
+		<child element="built" property="dateBuilt"/>
+		<child element="name" property="name" optional="True"/>
+		<child element="displayName" property="displayName" optional="True"/>
+		<child element="localizedDisplayName" property="localizedDisplayName" optional="True"/>
+		<child element="description" property="description" optional="True"/>
+		<child element="vendor" property="vendor" optional="True"/>
+		<child element="website" property="vendorWebsite" optional="True"/>
+		<child element="number" property="productNumber" optional="True"/>
+		<child element="location" property="installLocation" optional="True"/>
+		<child element="uninstallerRef" property="uninstaller" optional="True"/>
+		<child element="activeForUninstall" property="activeForUninstall" optional="True"/>
+		<child element="active" property="active"/>
+		<child element="installStatus" property="installStatus"/>
+		<child 
+				element="condition"
+				class="com.installshield.product.qjml.QProductBeanConditionAccess"
+				optional="True"
+				repeating="True"/>		
+		<child 
+				element="extendedProperty"
+				class="com.installshield.qjml.QExtendedPropertiesAccess"
+				optional="True"
+				repeating="True"/>
+		<child 
+				element="productRef" 
+				class="com.installshield.product.qjml.QDynamicProductRefAccess" 
+				optional="True" 
+				repeating="True"/>
+	</element>
+
+	<element name="staticSuite">
+		<targetClass>com.installshield.product.StaticSuite</targetClass>
+		<attribute name="id" type="string" status="REQUIRED" property="beanId"/>
+		<child element="key" property="key"/>
+		<child element="built" property="dateBuilt"/>
+		<child element="name" property="name" optional="True"/>
+		<child element="displayName" property="displayName" optional="True"/>
+		<child element="localizedDisplayName" property="localizedDisplayName" optional="True"/>
+		<child element="description" property="description" optional="True"/>
+		<child element="vendor" property="vendor" optional="True"/>
+		<child element="website" property="vendorWebsite" optional="True"/>
+		<child element="number" property="productNumber" optional="True"/>
+		<child element="location" property="installLocation" optional="True"/>
+		<child element="uninstallerRef" property="uninstaller" optional="True"/>
+		<child element="activeForUninstall" property="activeForUninstall" optional="True"/>
+		<child element="active" property="active"/>
+		<child element="installStatus" property="installStatus"/>
+		<child 
+				element="condition"
+				class="com.installshield.product.qjml.QProductBeanConditionAccess"
+				optional="True"
+				repeating="True"/>		
+		<child 
+				element="extendedProperty"
+				class="com.installshield.qjml.QExtendedPropertiesAccess"
+				optional="True"
+				repeating="True"/>
+		<selection
+			class="com.installshield.product.qjml.QStaticSuiteChildSelAccess"
+			optional="True" 
+			repeating="True">			
+			<child element="staticProductRef"/>
+			<child element="product"/>
+		</selection>
+	</element>
+		
+	<element name="product">
+		<targetClass>com.installshield.product.Product</targetClass>
+		<attribute name="id" type="string" status="REQUIRED" property="beanId"/>
+		<child element="key" property="key"/>
+		<child element="built" property="dateBuilt"/>
+		<child element="name" property="name" optional="True"/>
+		<child element="displayName" property="displayName" optional="True"/>
+		<child element="localizedDisplayName" property="localizedDisplayName" optional="True"/>
+		<child element="description" property="description" optional="True"/>
+		<child element="vendor" property="vendor" optional="True"/>
+		<child element="website" property="vendorWebsite" optional="True"/>
+		<child element="number" property="productNumber" optional="True"/>
+		<child element="location" property="installLocation" optional="True"/>
+		<child element="shareable" property="publiclyShareable"/>
+		<child element="uninstallerRef" property="uninstaller" optional="True"/>
+		<child element="activeForUninstall" property="activeForUninstall" optional="True"/>
+		<child element="active" property="active"/>
+		<child element="installStatus" property="installStatus"/>
+		<child element="patch" property="patch" optional="True"/>
+		<child element="replaceOption" property="replaceOption"/>
+		<child element="removeOption" property="removeOption"/>
+		<child element="installFailureOption" property="installFailureOption"/>
+		<child element="locale" property="locale" optional="True"/>
+		<child 
+				element="condition"
+				class="com.installshield.product.qjml.QProductBeanConditionAccess"
+				optional="True"
+				repeating="True"/>		
+		<child 
+				element="extendedProperty"
+				class="com.installshield.qjml.QExtendedPropertiesAccess"
+				optional="True"
+				repeating="True"/>
+		<child 
+				element="required" 
+				class="com.installshield.product.qjml.QSoftwareObjectRequiredAccess" 
+				optional="True" 
+				repeating="True"/>
+		<selection
+				class="com.installshield.product.qjml.QProductChildSelAccess"
+				optional="True" 
+				repeating="True">
+				<child element="feature"/>
+				<child element="component"/>
+				<child element="componentRef"/>
+		</selection>
+	</element>
+	
+	<element name="feature">
+		<targetClass>com.installshield.product.ProductFeature</targetClass>
+		<attribute name="id" type="string" status="REQUIRED" property="beanId"/>
+		<child element="key" property="key"/>
+		<child element="built" property="dateBuilt"/>
+		<child element="name" property="name" optional="True"/>
+		<child element="displayName" property="displayName" optional="True"/>
+		<child element="localizedDisplayName" property="localizedDisplayName" optional="True"/>
+		<child element="description" property="description" optional="True"/>
+		<child element="vendor" property="vendor" optional="True"/>
+		<child element="website" property="vendorWebsite" optional="True"/>
+		<child element="number" property="productNumber" optional="True"/>
+		<child element="location" property="installLocation" optional="True"/>
+		<child element="shareable" property="publiclyShareable"/>
+		<child element="uninstallerRef" property="uninstaller" optional="True"/>
+		<child element="activeForUninstall" property="activeForUninstall" optional="True"/>
+		<child element="active" property="active"/>
+		<child element="installStatus" property="installStatus"/>
+		<child element="replaceOption" property="replaceOption"/>
+		<child element="removeOption" property="removeOption"/>
+		<child element="installFailureOption" property="installFailureOption"/>
+		<child element="locale" property="locale" optional="True"/>
+		<child element="visible" property="visible" optional="True"/>
+		<child element="buildCategories" property="buildCategories" optional="True"/>
+		<child 
+				element="condition"
+				class="com.installshield.product.qjml.QProductBeanConditionAccess"
+				optional="True"
+				repeating="True"/>		
+		<child 
+				element="extendedProperty"
+				class="com.installshield.qjml.QExtendedPropertiesAccess"
+				optional="True"
+				repeating="True"/>
+		<child 
+				element="required" 
+				class="com.installshield.product.qjml.QSoftwareObjectRequiredAccess" 
+				optional="True" 
+				repeating="True"/>
+		<selection
+				class="com.installshield.product.qjml.QProductFeatureChildSelAccess"
+				optional="True" 
+				repeating="True">
+				<child element="feature"/>
+				<child element="component"/>
+				<child element="componentRef"/>
+		</selection>
+	</element>
+	
+	<element name="component">
+		<targetClass>com.installshield.product.ProductComponent</targetClass>
+		<attribute name="id" type="string" status="REQUIRED" property="beanId"/>
+		<child element="key" property="key"/>
+		<child element="built" property="dateBuilt"/>
+		<child element="name" property="name" optional="True"/>
+		<child element="displayName" property="displayName" optional="True"/>
+		<child element="description" property="description" optional="True"/>
+		<child element="vendor" property="vendor" optional="True"/>
+		<child element="website" property="vendorWebsite" optional="True"/>
+		<child element="number" property="productNumber" optional="True"/>
+		<child element="location" property="installLocation" optional="True"/>
+		<child element="shareable" property="publiclyShareable"/>
+		<child element="uninstallerRef" property="uninstaller" optional="True"/>
+		<child element="activeForUninstall" property="activeForUninstall" optional="True"/>
+		<child element="active" property="active"/>
+		<child element="installStatus" property="installStatus"/>
+		<child element="replaceOption" property="replaceOption"/>
+		<child element="removeOption" property="removeOption"/>
+		<child element="installFailureOption" property="installFailureOption"/>
+		<child element="onFailSummaryMessage" property="onFailSummaryMessage" optional="True"/>
+		<child element="locale" property="locale" optional="True"/>
+		<child element="buildCategories" property="buildCategories" optional="True"/>
+		<child 
+				element="condition"
+				class="com.installshield.product.qjml.QProductBeanConditionAccess"
+				optional="True"
+				repeating="True"/>		
+		<child 
+				element="extendedProperty"
+				class="com.installshield.qjml.QExtendedPropertiesAccess"
+				optional="True"
+				repeating="True"/>
+		<child 
+				element="required" 
+				class="com.installshield.product.qjml.QSoftwareObjectRequiredAccess" 
+				optional="True" 
+				repeating="True"/>
+		<child 
+				element="action" 
+				class="com.installshield.product.qjml.QProductActionAccess" 
+				optional="True" 
+				repeating="True"/>
+	</element>
+	
+	<element name="productRef">
+		<targetClass>com.installshield.product.DynamicProductReference</targetClass>
+		<attribute name="id" type="string" status="REQUIRED" property="beanId"/>
+		<child element="displayName" property="displayName" optional="True"/>
+		<child element="active" property="active"/>
+		<child element="installerRef" property="installer"/>
+		<child element="location" property="installLocation" optional="True"/>	
+		<child element="buildCategories" property="buildCategories" optional="True"/>
+		<child 
+				element="extendedProperty"
+				class="com.installshield.qjml.QExtendedPropertiesAccess"
+				optional="True"
+				repeating="True"/>
+	</element>
+
+	<element name="staticProductRef">
+		<targetClass>com.installshield.product.StaticProductReference</targetClass>
+		<attribute name="id" type="string" status="REQUIRED" property="beanId"/>
+		<child element="displayName" property="displayName" optional="True"/>
+		<child element="active" property="active"/>
+		<child element="sourceRef" property="source"/>
+		<child element="location" property="installLocation" optional="True"/>	
+		<child element="buildCategories" property="buildCategories" optional="True"/>
+		<child 
+				element="extendedProperty"
+				class="com.installshield.qjml.QExtendedPropertiesAccess"
+				optional="True"
+				repeating="True"/>
+	</element>
+	
+	<element name="componentRef">
+		<targetClass>com.installshield.product.ProductComponentReference</targetClass>
+		<attribute name="id" type="string" status="REQUIRED" property="beanId"/>
+		<child element="key" property="key"/>
+		<child element="resolution" property="resolutionPreference"/>
+		<child element="displayName" property="displayName" optional="True"/>
+	</element>
+	
+	<element name="action">
+		<targetFactory>com.installshield.product.qjml.QProductActionTF</targetFactory>
+		<attribute name="id" type="string" status="REQUIRED" property="beanId"/>
+		<attribute name="class" type="string" status="REQUIRED" property="className"/>
+		<child element="displayName" property="displayName" optional="True"/>
+		<child element="active" property="active" optional="True"/>
+		<child element="buildCategories" property="buildCategories" optional="True"/>
+		<child 
+				element="extendedProperty"
+				class="com.installshield.qjml.QExtendedPropertiesAccess"
+				optional="True"
+				repeating="True"/>
+		<child 
+				element="property" 
+				class="com.installshield.product.qjml.QProductActionPropertyAccess" 
+				optional="True" 
+				repeating="True"/>
+	</element>
+
+	<!-- extendedProperty elements should correspond exactly to
+		property elements. I.e. changes to one should be made to
+		the other -->
+		
+	<element name="extendedProperty" content="BIMODAL">
+		<targetClass>com.installshield.qjml.QProperty</targetClass>
+		<attribute name="name" type="string" status="REQUIRED" property="name"/>
+		<attribute name="type" type="string" property="type" value=""/>
+		<attribute name="array" type="boolean" property="array" value="False"/>
+		<attribute name="length" type="int" property="arrayLength" value="-1"/>
+		<child 
+				element="property" 
+				class="com.installshield.qjml.QPropertyAccess" 
+				optional="True" 
+				repeating="True"/>
+		<child 
+				element="arrayItem" 
+				class="com.installshield.qjml.QArrayItemAccess" 
+				optional="True" 
+				repeating="True"/>
+	</element>
+	
+	<element name="property" content="BIMODAL">
+		<targetClass>com.installshield.qjml.QProperty</targetClass>
+		<attribute name="name" type="string" status="REQUIRED" property="name"/>
+		<attribute name="type" type="string" property="type" value=""/>
+		<attribute name="array" type="boolean" property="array" value="False"/>
+		<attribute name="length" type="int" property="arrayLength" value="-1"/>
+		<child 
+				element="property" 
+				class="com.installshield.qjml.QPropertyAccess" 
+				optional="True" 
+				repeating="True"/>
+		<child 
+				element="arrayItem" 
+				class="com.installshield.qjml.QArrayItemAccess" 
+				optional="True" 
+				repeating="True"/>
+	</element>
+	
+	<element name="arrayItem" content="BIMODAL">
+		<targetClass>com.installshield.qjml.QArrayItem</targetClass>
+		<attribute name="type" type="string" property="type" value=""/>
+		<child 
+				element="property" 
+				class="com.installshield.qjml.QPropertyAccess" 
+				optional="True" 
+				repeating="True"/>
+	</element>
+	
+</qjml>

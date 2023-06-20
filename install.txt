@@ -1,0 +1,113 @@
+TRUST GATEWAY 1.0 EARLY ACCESS INSTALLATION README
+
+Welcome to the Early Access 1.0 Release of VeriSign's
+Trust Gateway. The Trust Gateway is a JavaTM solution 
+for securing networked application messaging using 
+Web services security standards.
+
+Once you have installed the Trust Gateway, please
+refer to the "Trust Gateway Administrator's Guide", 
+found under /docs in the installation,
+for instructions on configuring and using the Trust 
+Gateway.
+
+INSTALLATION REQUIREMENTS
+
+* Windows NT, 2000, or XP
+* Solaris 2.8 or 2.9
+* Linux Red Hat 7.2
+
+On Linux and Solaris, you must run this Early 
+Access version as root user.
+
+INSTALLING THE TRUST GATEWAY SOFTWARE
+
+1. Obtain the latest Trust Gateway installer.
+
+   * If you downloaded the installer, unzip 
+     the installer into a temporary directory (TrustGateway 
+     in this example).
+
+   * If you are using the CD, place the Trust Gateway CD 
+     in your CD drive (D: in this example).
+
+2. Run the appropriate Trust Gateway installer for your
+   software platform:
+
+   * On Solaris, run TrustGateway/solaris/setup
+
+   * On Linux, run TrustGateway/linux/setup
+
+   * On Windows, run D:\TrustGateway\Windows\setup.exe
+
+3. Follow the onscreen prompts to install the software:
+
+   * Review the license carefully. You must accept the terms of
+     the license to continue. If you do not accept the terms of 
+     the license, you must terminate the installation process.
+
+   * Enter a product key (serial number). To install a free,
+     60-day evaluation version of the Trust Gateway, leave this
+     field blank. To obtain a product key, please contact
+     trustgateway@verisign.com
+
+   * Choose an installation directory.
+
+   * Select Installation Options:
+
+     You have the option to install the Trust Gateway Standalone 
+     Server and Administration Console, the Trust Gateway toolkit,
+     WS-Security component, and, on Windows, a Windows service.
+
+     - The Trust Gateway Server is the stand-alone Trust 
+       Gateway component that performs security processing 
+       on behalf of the enterprise's applications.
+
+     - The Trust Gateway toolkit includes developer resources. The 
+       toolkit also provides tools for testing your installation.
+       
+     - WS-Security is an emerging standard for securing Web
+       Services.  We recommend that you install our implementation.
+       See http://www.verisign.com/wss/wss.pdf for more information.
+
+   * If you selected WS-Security, you must accept the terms of the
+     license to continue. Read the terms carefully. If you do not 
+     accept the terms of the license, you must terminate the 
+     installation and install the Trust Gateway without the 
+     WS-Security option.
+
+   * Choose an administrator name and password. This identifies 
+     the administrator who will configure the Trust Gateway.
+     Please be aware that this evaluation version of the Trust Gateway
+     supports only a single user. You can change your password in
+     Gateway Administration console after you have installed 
+     the product.
+
+   * Select an Administration Port. This is the server port you
+     will use to login to the Trust Gateway Administration Console.
+     The default port is 8776. If this port is in use by another
+     application, you will receive a warning. 
+
+The Trust Gateway servlet is now installed.
+
+If you installed as service n Windows, you must restart your
+machine before you run the Trust Gateway.
+
+Refer to the README document in the InstallShield  application
+for instructions on starting the Trust Gateway and Trust
+Gateway Administrator's Console.
+
+-----------------
+
+For more information on the Trust Gateway,
+please contact:
+
+trustgateway@verisign.com 
+
+or visit:
+
+http://www.verisign.com/products/trustgateway
+
+------------------
+
+The Trust Gateway Team

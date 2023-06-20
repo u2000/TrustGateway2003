@@ -1,0 +1,127 @@
+VERISIGN, INC. END USER SOFTWARE LICENSE AGREEMENT
+ 
+BY CLICKING "I ACCEPT", DOWNLOADING THE SOFTWARE OR 
+OPENING THE PACKAGE, YOU ARE CONSENTING TO BE 
+BOUND BY AND ARE BECOMING A PARTY TO THIS 
+AGREEMENT. IF YOU DO NOT AGREE TO ALL OF THE TERMS 
+OF THIS AGREEMENT, DO NOT DOWNLOAD THE SOFTWARE, 
+OR CLICK "I DO NOT ACCEPT", AND, IF APPLICABLE, RETURN 
+THIS PRODUCT TO VERISIGN. 
+THIS END USER SOFTWARE LICENSE AGREEMENT 
+("Agreement") is made between you, the end user, and VeriSign, Inc. 
+("VeriSign").
+1. Grant of License.
+Your use of the software provided with this Agreement (the 
+"Software") is strictly limited to that permitted in the applicable 
+agreements between you or your employer or principal and VeriSign 
+under which the Software was provided ("License Agreement"), and 
+you may not install or use the Software for any purpose unless and 
+until such License Agreement has been executed. You are expressly 
+prohibited from sublicensing, selling, renting, leasing or otherwise 
+distributing copies of the Software, except as may be explicitly 
+permitted in the License Agreement. Notwithstanding any other 
+provision of this Agreement, you may not use the Software in a 
+manner inconsistent with applicable law.  IN ADDITION TO THE 
+FOREGOING REQUIREMENTS, YOU MAY NOT USE THE 
+SOFTWARE UNTIL YOU HAVE REVIEWED AND EXECUTED THE 
+MICROSOFT CORPORATION ("MICROSOFT") ROYALTY FREE 
+WEB SERVICES SECURITY SPECIFICATION LICENSE 
+AGREEMENT AND THE IBM CORPORATION ("IBM") WS-
+SECURITY LICENSE AGREEMENT WHICH ARE PROVIDED IN 
+THE DISTRIBUTION, AND 
+COMPLIED WITH ALL APPLICABLE REQUIREMENTS PROVIDED 
+THEREIN.
+2. Intellectual Property Protection.
+The Software, including its operation, code, architecture and 
+implementation, as well as the look and feel of the Software are the 
+valuable intellectual property of VeriSign and its licensors. The 
+Software is protected by United States copyright laws and 
+international treaty provisions. This Agreement does not give you 
+any intellectual property rights in the Software. You agree not to 
+modify, translate, disassemble, decompile, reverse engineer, create 
+derivative works of, or make any other attempt by any means to 
+discover or obtain the source code for the Software.
+3. Disclaimer of Warranty.
+VERISIGN MAKES NO WARRANTY, EXPRESSED, IMPLIED OR 
+STATUTORY, INCLUDING WITHOUT LIMITATION, ANY IMPLIED 
+WARRANTY OF MERCHANTABILITY, FITNESS FOR A 
+PARTICULAR PURPOSE, OR NON-INFRINGEMENT OF THIRD-
+PARTY RIGHTS. IF IMPLIED WARRANTIES MAY NOT BE 
+DISCLAIMED UNDER APPLICABLE LAW, THEN ANY IMPLIED 
+WARRANTIES ARE LIMITED IN DURATION TO THE ABOVE 
+LIMITED WARRANTY PERIOD. SOME STATES DO NOT ALLOW 
+LIMITATIONS ON HOW LONG AN IMPLIED WARRANTY LASTS, 
+SO THE ABOVE LIMITATION MAY NOT APPLY TO YOU. NO 
+VERISIGN DEALER, AGENT OR EMPLOYEE IS AUTHORIZED TO 
+MAKE ANY MODIFICATIONS, EXTENSIONS, OR ADDITIONS TO 
+THIS WARRANTY. 
+4. Limitation of Liability.
+UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, 
+TORT, CONTRACT, OR OTHERWISE, SHALL VERISIGN OR ITS 
+SUPPLIERS OR RESELLERS BE LIABLE TO YOU OR ANY 
+OTHER PERSON FOR ANY INDIRECT, SPECIAL, INCIDENTAL, 
+EXEMPLARY OR CONSEQUENTIAL DAMAGES OF ANY 
+CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES 
+FOR LOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, 
+LOSS OF BUSINESS INFORMATION, COMPUTER FAILURE OR 
+MALFUNCTION, OR ANY AND ALL OTHER COMMERCIAL 
+DAMAGES OR LOSSES EVEN IF VERISIGN SHALL HAVE BEEN 
+INFORMED OF THE POSSIBILITY OF SUCH DAMAGES. 
+VERISIGN SHALL BE HELD HARMLESS FOR ANY LOSSES, 
+REAL OR PERCEIVED, THAT OCCUR RELATING TO THE USE 
+OF THE SOFTWARE. SOME STATES DO NOT ALLOW THE 
+EXCLUSION OR LIMITATION OF INCIDENTAL OR 
+CONSEQUENTIAL DAMAGES, SO THIS LIMITATION AND 
+EXCLUSION MAY NOT APPLY TO YOU. IN ADDITION TO THE 
+OTHER LIMITATIONS PROVIDED HEREIN, VERISIGN 
+EXPRESSLY DISCLAIMS ANY AND ALL LIABILITY ARISING 
+FROM OR RELATING TO LIMITATIONS, INCOMPATIBILITIES, 
+DEFECTS, OR OTHER PROBLEMS INHERENT IN XML, XKMS, 
+OR ANY OTHER STANDARD NOT UNDER VERISIGN'S SOLE 
+CONTROL, OR RELATING TO CUSTOMER-REQUESTED 
+GENERATION AND TRANSMISSION OF A SUBSCRIBER'S 
+PRIVATE KEY UNDER XKMS TO THE EXTENT VERISIGN 
+ADHERES TO THE VERISIGN CPS AND INDUSTRY-STANDARD 
+SECURITY PRACTICES RELATING TO XKMS SERVICES.
+5. Export Control. YOU HEREBY AGREE AND WARRANT THAT 
+YOU ARE A CITIZEN, NATIONAL OR LAWFUL PERMANENT 
+RESIDENT OF THE UNITED STATES AND ARE DOWNLOADING 
+THE SOFTWARE FOR USE IN THE UNITED STATES OR 
+CANADA. EXCEPT FOR EXPORT TO CANADA FOR USE IN 
+CANADA BY CANADIAN CITIZENS, THE SOFTWARE MAY NOT 
+BE EXPORTED OUTSIDE THE UNITED STATES OR TO ANY 
+FOREIGN ENTITY OR "FOREIGN PERSON" AS DEFINED BY U.S. 
+GOVERNMENT REGULATIONS, INCLUDING WITHOUT 
+LIMITATION, ANYONE WHO IS NOT A CITIZEN, NATIONAL OR 
+LAWFUL PERMANENT RESIDENT OF THE UNITED STATES. BY 
+DOWNLOADING OR USING THE SOFTWARE, YOU AGREE TO 
+THE FOREGOING AND WARRANT THAT YOU ARE NOT A 
+"FOREIGN PERSON" OR UNDER THE CONTROL OF A 
+"FOREIGN PERSON."
+7. Government End Users. 
+If this license is acquired under a U.S. government contract, you 
+acknowledge that the Software and documentation are "Commercial 
+Computer Software" as that term is defined in 48 C.F.R. 12.212 of 
+the Federal Acquisition Regulations (FAR) and in 48 C.F.R. 
+227.7014(a)(i) of the Department of Defense Federal Acquisition 
+Regulations Supplement (DFARS).
+8. General Provisions.
+Subject to Section 1 hereof and except for the applicable License 
+Agreement, this Agreement is the exclusive agreement between you 
+and VeriSign concerning the Software and supersedes any and all 
+prior or contemporaneous oral or written agreements, 
+representations, negotiations or other dealings between you and 
+VeriSign. This Agreement will be governed by the laws of the State 
+of California applicable to contracts executed and performed entirely 
+in California by residents of that State. If any part of this Agreement 
+is found to be void, unenforceable or invalid, it shall not affect the 
+other provisions of this Agreement. This Agreement can only be 
+modified by a writing signed by both parties. Failure by either party to 
+enforce any provision of this Agreement will not be deemed a waiver 
+of future enforcement of that or any other provision.
+ 
+By downloading, installing, and/or using this software, I confirm 
+that I have read and agree to the terms and conditions in the 
+VERISIGN, INC. END USER SOFTWARE LICENSE AGREEMENT.
+ 
+

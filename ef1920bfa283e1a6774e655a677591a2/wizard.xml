@@ -1,0 +1,56 @@
+
+<wizard name="Setup" purpose="product.install" uid="09316c6f908097d22035aefbe73f298f">
+    <title>TrustGateway Installer</title>
+    <listener>com.installshield.wizard.StandardWizardListener</listener>
+    <interfaceName>awt</interfaceName>
+    <localeSelect>0</localeSelect>
+    <defaultLocale>en</defaultLocale>
+    <availableLocales>cs,da,nl,en,fi,fr,de,el,hu,it,ja,ko,no,pl,pt,pt_BR,ru,zh,es,sv,zh_TW,tr</availableLocales>
+    <interface class="com.installshield.wizard.awt.AWTWizardUI" name="awt">
+        <property name="wizardImage">09316c6f908097d22035aefbe73f298f/awt/welcome.gif</property>
+        <property name="wizardImageSource">/buildroom/bin/bin.x/platforms/java/bldrm/multiplatform/mp45iSeries/images/InstallShield Images/welcome.gif</property>
+        <property name="wizardImageOrientation">1</property>
+        <property name="splashImageSource"/>
+        <property name="splashDuration">0</property>
+        <property name="includeLocalizedSplashImages">False</property>
+        <property name="wizardIcon">09316c6f908097d22035aefbe73f298f/awt/icon.gif</property>
+        <property name="wizardIconSource">/buildroom/bin/bin.x/platforms/java/bldrm/multiplatform/mp45iSeries/images/InstallShield Images/icon.gif</property>
+        <property name="width">640</property>
+        <property name="height">420</property>
+        <property name="defaultFont" type="com.installshield.util.FontDef">
+            <property name="name">Dialog</property>
+            <property name="size">12</property>
+            <property name="style">0</property>
+        </property>
+        <property name="backgroundColor">SystemColor.control</property>
+        <property name="foregroundColor">SystemColor.controlText</property>
+        <property name="splashImage"/>
+    </interface>
+    <interface class="com.installshield.wizard.console.ConsoleWizardUI" name="console"/>
+    <log>
+        <property name="allEventsLogged">True</property>
+        <property array="True" length="2" name="eventsLogged" type="string">
+            <arrayItem>wrn</arrayItem>
+            <arrayItem>err</arrayItem>
+        </property>
+        <property name="logEchoedToScreen">True</property>
+        <property name="logExceptionStackTraces">True</property>
+        <property name="logOutput">log.txt</property>
+        <property name="logOutputEnabled">True</property>
+        <property name="loggingContext">Setup.product.install</property>
+        <property name="optionalLogOutputEnabled">False</property>
+    </log>
+    <startupBean class="com.installshield.wizard.commandline.SilentMode"/>
+    <startupBean class="com.installshield.wizard.commandline.WizardBeanPropertiesOption"/>
+    <startupBean class="com.installshield.wizard.commandline.WizardLogOption"/>
+    <startupBean class="com.installshield.wizard.commandline.WizardValueOption"/>
+    <startupBean class="com.installshield.wizard.commandline.GotoOption"/>
+    <startupBean class="com.installshield.wizard.commandline.GenerateOptionsTemplate"/>
+    <startupBean class="com.installshield.wizard.commandline.GenerateOptionsRecord"/>
+    <startupBean class="com.installshield.product.commandline.ProductBeanPropertiesOption"/>
+    <startupBean class="com.installshield.wizard.service.system.SystemUtilServiceInitialize"/>
+    <startupBean class="com.installshield.wizard.awt.AWTMode"/>
+    <startupBean class="com.installshield.wizard.awt.GUIMode"/>
+    <startupBean class="com.installshield.wizard.console.ConsoleMode"/>
+    <startupBean class="com.installshield.wizard.AccessibilityMode"/>
+</wizard>

@@ -1,0 +1,621 @@
+
+<productTree>
+    <uninstaller>
+        <property name="beanId">uninstaller</property>
+        <property name="active">True</property>
+        <property name="installLocation">_uninst</property>
+        <property name="archiveName">uninstall.jar</property>
+        <property array="True" length="6" name="resourceExclusions" type="string">
+            <arrayItem>bean14/solaris.jvm.resolution.extra.sparc/sunjre141_02-solaris-installer.sh</arrayItem>
+            <arrayItem>bean14/win32ppk/sunjre141_02-win32-installer.exe</arrayItem>
+            <arrayItem>bean14/linux.jvm.resolution/sunjre141_02-linux-installer.bin</arrayItem>
+            <arrayItem>JVMResolutionBean/solaris.jvm.resolution.extra.sparc/sunjre141_02-solaris-installer.sh</arrayItem>
+            <arrayItem>JVMResolutionBean/win32ppk/sunjre141_02-win32-installer.exe</arrayItem>
+            <arrayItem>JVMResolutionBean/linux.jvm.resolution/sunjre141_02-linux-installer.bin</arrayItem>
+        </property>
+        <property array="True" length="0" name="installedFiles" type="string"/>
+        <property name="resourcesFileName">uninstall.dat</property>
+        <property name="uninstallerWizardId">3e0e7bb0c6a21acd16d2b97863f2a510</property>
+        <property name="uninstallerWizard">/uninstallWizard.xml</property>
+        <property name="uninstallerWizardTree">/uninstallWizardTree.xml</property>
+    </uninstaller>
+    <uninstallerLauncher>
+        <property name="active">True</property>
+        <property name="wizardArguments"/>
+        <property name="javaArguments">%IF_EXISTS%(&quot;INIT_JAVA_HEAP&quot;, &quot;@INIT_JAVA_HEAP@20m&quot;) %IF_EXISTS%(&quot;MAX_JAVA_HEAP&quot;, &quot;@MAX_JAVA_HEAP@60m&quot;)</property>
+        <property array="True" length="0" name="additionalClassPaths" type="string"/>
+        <property array="True" length="0" name="systemProperties" type="string"/>
+        <property name="beanId">bean13</property>
+        <extendedProperty name="win32ppk" type="com.installshield.wizard.platform.win32.Win32LauncherExtra">
+            <property name="fileName">uninstaller.exe</property>
+            <property name="launcherUIDisplayTime">0</property>
+            <property name="showConsole">False</property>
+            <property name="userInterface">0</property>
+        </extendedProperty>
+        <extendedProperty name="linux.launcher.extra" type="com.ibm.wizard.platform.linux.LinuxLauncherExtra">
+            <property name="fileName">uninstaller.bin</property>
+            <property name="launcherUIDisplayTime">0</property>
+            <property name="showConsole">False</property>
+        </extendedProperty>
+        <extendedProperty name="solaris.launcher.extra.x86" type="com.installshield.wizard.platform.solaris.extra.SolarisLauncherExtraX86">
+            <property name="fileName">uninstaller.bin</property>
+            <property name="launcherUIDisplayTime">0</property>
+            <property name="showConsole">False</property>
+        </extendedProperty>
+        <extendedProperty name="solaris.launcher.extra.sparc" type="com.installshield.wizard.platform.solaris.extra.SolarisLauncherExtraSparc">
+            <property name="fileName">uninstaller.bin</property>
+            <property name="launcherUIDisplayTime">0</property>
+            <property name="showConsole">False</property>
+        </extendedProperty>
+    </uninstallerLauncher>
+    <uninstallerJVMResolution>
+        <property name="JVMId">jvm</property>
+        <property name="installLocation">jvm1.4.1.2</property>
+        <property name="useInstalledJVM">True</property>
+        <property name="replaceJVMResponse">unspecified</property>
+        <property name="active">True</property>
+        <property name="resolveOnReinstalls">False</property>
+        <property name="beanId">bean14</property>
+        <extendedProperty name="solaris.jvm.resolution.extra.sparc" type="com.installshield.wizard.platform.solaris.extra.SolarisJVMResolutionExtra">
+            <property array="True" length="0" name="JVMFileResources" type="string"/>
+            <property array="True" length="0" name="JVMFileSources" type="com.installshield.util.jvm.JVMFile"/>
+            <property name="JVMResolution">1</property>
+            <property name="bundledJVMArguments">-qq -o</property>
+            <property name="bundledJVMResource">bean14/solaris.jvm.resolution.extra.sparc/sunjre141_02-solaris-installer.sh</property>
+            <property name="bundledJVMSource">$A(TRUSTGATEWAY_SOURCE)/installshieldmisc/jvms/solaris/sunjre141_02-solaris-installer.sh</property>
+            <property name="timeout">120</property>
+            <property name="useCurrentJVM">False</property>
+        </extendedProperty>
+        <extendedProperty name="win32ppk" type="com.installshield.wizard.platform.win32.Win32JVMResolutionExtra">
+            <property array="True" length="0" name="JVMFileResources" type="string"/>
+            <property array="True" length="0" name="JVMFileSources" type="com.installshield.util.jvm.JVMFile"/>
+            <property name="JVMResolution">1</property>
+            <property name="bundledJVMArguments">-qq -o</property>
+            <property name="bundledJVMResource">bean14/win32ppk/sunjre141_02-win32-installer.exe</property>
+            <property name="bundledJVMSource">$A(TRUSTGATEWAY_SOURCE)/installshieldmisc/jvms/win32/sunjre141_02-win32-installer.exe</property>
+            <property name="timeout">120</property>
+            <property name="useCurrentJVM">False</property>
+        </extendedProperty>
+        <extendedProperty name="linux.jvm.resolution" type="com.ibm.wizard.platform.linux.LinuxJVMResolutionExtra">
+            <property array="True" length="0" name="JVMFileResources" type="string"/>
+            <property array="True" length="0" name="JVMFileSources" type="com.installshield.util.jvm.JVMFile"/>
+            <property name="JVMResolution">1</property>
+            <property name="bundledJVMArguments">-qq -o</property>
+            <property name="bundledJVMResource">bean14/linux.jvm.resolution/sunjre141_02-linux-installer.bin</property>
+            <property name="bundledJVMSource">$A(TRUSTGATEWAY_SOURCE)/installshieldmisc/jvms/linux/sunjre141_02-linux-installer.bin</property>
+            <property name="timeout">120</property>
+            <property name="useCurrentJVM">False</property>
+        </extendedProperty>
+    </uninstallerJVMResolution>
+    <logFile>log.txt</logFile>
+    <selectedLocales/>
+    <localeOption>1</localeOption>
+    <product id="TrustGatewayProduct">
+        <key>
+            <uid>5838f7227e262d34bb5ce6043814c0a1</uid>
+            <version maintenance="8" major="0" minor="8"/>
+        </key>
+        <built>19691131 160000.000-0800</built>
+        <name>product1</name>
+        <displayName>TrustGateway</displayName>
+        <localizedDisplayName>TrustGateway</localizedDisplayName>
+        <vendor>VeriSign, Inc.</vendor>
+        <website>http://www.verisign.com/products/trustgateway</website>
+        <number>XML088</number>
+        <location>$D(install)/TrustGateway</location>
+        <shareable>false</shareable>
+        <activeForUninstall>true</activeForUninstall>
+        <active>true</active>
+        <installStatus>0</installStatus>
+        <patch>false</patch>
+        <replaceOption>0</replaceOption>
+        <removeOption>0</removeOption>
+        <installFailureOption>1</installFailureOption>
+        <feature id="TrustGatewayServerFeature">
+            <key>
+                <uid>72f06ff6eaa0eb524dd6c855ccf31578</uid>
+                <version/>
+            </key>
+            <built>19691131 160000.000-0800</built>
+            <name>TrustGateway Server Feature</name>
+            <displayName>TrustGateway server</displayName>
+            <shareable>false</shareable>
+            <activeForUninstall>true</activeForUninstall>
+            <active>true</active>
+            <installStatus>0</installStatus>
+            <replaceOption>0</replaceOption>
+            <removeOption>0</removeOption>
+            <installFailureOption>1</installFailureOption>
+            <visible>true</visible>
+            <buildCategories/>
+            <component id="TrustGatewayServerComponent">
+                <key>
+                    <uid>02c248525d9d9ee0ae14818f267c3df6</uid>
+                    <version/>
+                </key>
+                <built>19691131 160000.000-0800</built>
+                <name>TrustGateway Server</name>
+                <displayName>TrustGateway server</displayName>
+                <shareable>false</shareable>
+                <activeForUninstall>true</activeForUninstall>
+                <active>true</active>
+                <installStatus>0</installStatus>
+                <replaceOption>0</replaceOption>
+                <removeOption>0</removeOption>
+                <installFailureOption>3</installFailureOption>
+                <onFailSummaryMessage/>
+                <buildCategories/>
+                <action class="com.installshield.product.actions.JVMResolution" id="JVMResolutionBean">
+                    <displayName>JVM Resolution</displayName>
+                    <active>false</active>
+                    <buildCategories/>
+                    <extendedProperty name="solaris.jvm.resolution.extra.sparc" type="com.installshield.wizard.platform.solaris.extra.SolarisJVMResolutionExtra">
+                        <property array="True" length="0" name="JVMFileResources" type="string"/>
+                        <property array="True" length="0" name="JVMFileSources" type="com.installshield.util.jvm.JVMFile"/>
+                        <property name="JVMResolution">1</property>
+                        <property name="bundledJVMArguments">-qq -o</property>
+                        <property name="bundledJVMResource">JVMResolutionBean/solaris.jvm.resolution.extra.sparc/sunjre141_02-solaris-installer.sh</property>
+                        <property name="bundledJVMSource">$A(TRUSTGATEWAY_SOURCE)/installshieldmisc/jvms/solaris/sunjre141_02-solaris-installer.sh</property>
+                        <property name="timeout">120</property>
+                        <property name="useCurrentJVM">False</property>
+                    </extendedProperty>
+                    <extendedProperty name="win32ppk" type="com.installshield.wizard.platform.win32.Win32JVMResolutionExtra">
+                        <property array="True" length="0" name="JVMFileResources" type="string"/>
+                        <property array="True" length="0" name="JVMFileSources" type="com.installshield.util.jvm.JVMFile"/>
+                        <property name="JVMResolution">1</property>
+                        <property name="bundledJVMArguments">-qq -o</property>
+                        <property name="bundledJVMResource">JVMResolutionBean/win32ppk/sunjre141_02-win32-installer.exe</property>
+                        <property name="bundledJVMSource">$A(TRUSTGATEWAY_SOURCE)/installshieldmisc/jvms/win32/sunjre141_02-win32-installer.exe</property>
+                        <property name="timeout">120</property>
+                        <property name="useCurrentJVM">False</property>
+                    </extendedProperty>
+                    <extendedProperty name="linux.jvm.resolution" type="com.ibm.wizard.platform.linux.LinuxJVMResolutionExtra">
+                        <property array="True" length="0" name="JVMFileResources" type="string"/>
+                        <property array="True" length="0" name="JVMFileSources" type="com.installshield.util.jvm.JVMFile"/>
+                        <property name="JVMResolution">1</property>
+                        <property name="bundledJVMArguments">-qq -o</property>
+                        <property name="bundledJVMResource">JVMResolutionBean/linux.jvm.resolution/sunjre141_02-linux-installer.bin</property>
+                        <property name="bundledJVMSource">$A(TRUSTGATEWAY_SOURCE)/installshieldmisc/jvms/linux/sunjre141_02-linux-installer.bin</property>
+                        <property name="timeout">120</property>
+                        <property name="useCurrentJVM">False</property>
+                    </extendedProperty>
+                    <property name="JVMId">jvm</property>
+                    <property name="installLocation">jvm1.4.1.2</property>
+                    <property name="useInstalledJVM">False</property>
+                    <property name="replaceJVMResponse">unspecified</property>
+                </action>
+                <action class="com.installshield.product.actions.Files" id="serverFilesBean">
+                    <displayName>Files</displayName>
+                    <active>true</active>
+                    <buildCategories/>
+                    <property name="archiveIndexEntry">0/777</property>
+                    <property name="totalBytes">23904053</property>
+                    <property name="owner"/>
+                    <property name="group"/>
+                    <property name="storedAs">0</property>
+                    <property name="externalResourceLocation"/>
+                    <property name="externalResourceMediaId">1</property>
+                </action>
+                <action class="com.installshield.product.actions.DesktopIcon" id="StartupIcon">
+                    <displayName>Desktop Icon</displayName>
+                    <active>true</active>
+                    <buildCategories/>
+                    <extendedProperty name="win32ppk" type="com.installshield.wizard.platform.win32.Win32DesktopIconExtra">
+                        <property name="folderContext">$UserPrograms$</property>
+                        <property name="iconFile"/>
+                        <property name="iconFileType">1</property>
+                        <property name="platformSpecificTarget">$P(absoluteInstallLocation)/bin/startup.bat</property>
+                        <property name="relativePlatformSpecificTarget">False</property>
+                    </extendedProperty>
+                    <property name="folder">Trust Gateway</property>
+                    <property name="name">Start TrustGateway</property>
+                    <property name="target"/>
+                    <property name="relativeTarget">False</property>
+                    <property name="args"/>
+                    <property name="workingDirectory"/>
+                    <property name="workingDirectoryRelative">False</property>
+                    <property name="itemOwner"/>
+                    <property name="itemGroup"/>
+                    <property name="folderOwner"/>
+                    <property name="folderGroup"/>
+                    <property name="installedIconFile"/>
+                    <property name="installedFolder"/>
+                    <property name="installedName"/>
+                    <property name="scriptFile"/>
+                </action>
+                <action class="com.installshield.product.actions.DesktopIcon" id="ShutdownIcon">
+                    <displayName>Desktop Icon</displayName>
+                    <active>true</active>
+                    <buildCategories/>
+                    <extendedProperty name="win32ppk" type="com.installshield.wizard.platform.win32.Win32DesktopIconExtra">
+                        <property name="folderContext">$UserPrograms$</property>
+                        <property name="iconFile"/>
+                        <property name="iconFileType">1</property>
+                        <property name="platformSpecificTarget">$P(absoluteInstallLocation)/bin/shutdown.bat</property>
+                        <property name="relativePlatformSpecificTarget">False</property>
+                    </extendedProperty>
+                    <property name="folder">Trust Gateway</property>
+                    <property name="name">Stop TrustGateway</property>
+                    <property name="target"/>
+                    <property name="relativeTarget">False</property>
+                    <property name="args"/>
+                    <property name="workingDirectory"/>
+                    <property name="workingDirectoryRelative">False</property>
+                    <property name="itemOwner"/>
+                    <property name="itemGroup"/>
+                    <property name="folderOwner"/>
+                    <property name="folderGroup"/>
+                    <property name="installedIconFile"/>
+                    <property name="installedFolder"/>
+                    <property name="installedName"/>
+                    <property name="scriptFile"/>
+                </action>
+                <action class="com.installshield.product.actions.DesktopIcon" id="ConsoleIcon">
+                    <displayName>Desktop Icon</displayName>
+                    <active>true</active>
+                    <buildCategories/>
+                    <extendedProperty name="win32ppk" type="com.installshield.wizard.platform.win32.Win32DesktopIconExtra">
+                        <property name="folderContext">$UserPrograms$</property>
+                        <property name="iconFile"/>
+                        <property name="iconFileType">1</property>
+                        <property name="platformSpecificTarget"/>
+                        <property name="relativePlatformSpecificTarget">False</property>
+                    </extendedProperty>
+                    <property name="folder">Trust Gateway</property>
+                    <property name="name">TrustGateway Administration</property>
+                    <property name="target">$P(absoluteInstallLocation)/webapps/console/admin.html</property>
+                    <property name="relativeTarget">False</property>
+                    <property name="args"/>
+                    <property name="workingDirectory"/>
+                    <property name="workingDirectoryRelative">True</property>
+                    <property name="itemOwner"/>
+                    <property name="itemGroup"/>
+                    <property name="folderOwner"/>
+                    <property name="folderGroup"/>
+                    <property name="installedIconFile"/>
+                    <property name="installedFolder"/>
+                    <property name="installedName"/>
+                    <property name="scriptFile"/>
+                </action>
+                <action class="com.installshield.product.actions.DesktopIcon" id="ReadmeIcon">
+                    <displayName>Desktop Icon</displayName>
+                    <active>true</active>
+                    <buildCategories/>
+                    <extendedProperty name="win32ppk" type="com.installshield.wizard.platform.win32.Win32DesktopIconExtra">
+                        <property name="folderContext">$UserPrograms$</property>
+                        <property name="iconFile"/>
+                        <property name="iconFileType">1</property>
+                        <property name="platformSpecificTarget">Readme.txt</property>
+                        <property name="relativePlatformSpecificTarget">True</property>
+                    </extendedProperty>
+                    <property name="folder">Trust Gateway</property>
+                    <property name="name">Readme.txt</property>
+                    <property name="target">Readme.txt</property>
+                    <property name="relativeTarget">True</property>
+                    <property name="args"/>
+                    <property name="workingDirectory"/>
+                    <property name="workingDirectoryRelative">True</property>
+                    <property name="itemOwner"/>
+                    <property name="itemGroup"/>
+                    <property name="folderOwner"/>
+                    <property name="folderGroup"/>
+                    <property name="installedIconFile"/>
+                    <property name="installedFolder"/>
+                    <property name="installedName"/>
+                    <property name="scriptFile"/>
+                </action>
+                <action class="com.installshield.product.actions.DesktopIcon" id="Uninstall icon">
+                    <displayName>Desktop Icon</displayName>
+                    <active>true</active>
+                    <buildCategories/>
+                    <extendedProperty name="win32ppk" type="com.installshield.wizard.platform.win32.Win32DesktopIconExtra">
+                        <property name="folderContext">$UserPrograms$</property>
+                        <property name="iconFile"/>
+                        <property name="iconFileType">1</property>
+                        <property name="platformSpecificTarget">_uninst/uninstaller.exe</property>
+                        <property name="relativePlatformSpecificTarget">True</property>
+                    </extendedProperty>
+                    <property name="folder">Trust Gateway</property>
+                    <property name="name">Uninstall TrustGateway</property>
+                    <property name="target">_uninst/uninstaller</property>
+                    <property name="relativeTarget">True</property>
+                    <property name="args"/>
+                    <property name="workingDirectory"/>
+                    <property name="workingDirectoryRelative">True</property>
+                    <property name="itemOwner"/>
+                    <property name="itemGroup"/>
+                    <property name="folderOwner"/>
+                    <property name="folderGroup"/>
+                    <property name="installedIconFile"/>
+                    <property name="installedFolder"/>
+                    <property name="installedName"/>
+                    <property name="scriptFile"/>
+                </action>
+                <action class="com.installshield.extras.product.FileSystemManipulation" id="uninstallconf">
+                    <displayName>File System Manipulation</displayName>
+                    <active>true</active>
+                    <buildCategories/>
+                    <property name="source">$P(absoluteInstallLocation)/conf</property>
+                    <property name="target"/>
+                    <property name="action">2</property>
+                    <property name="runtime">1</property>
+                </action>
+                <action class="com.installshield.extras.product.FileSystemManipulation" id="uninstalllogs">
+                    <displayName>File System Manipulation</displayName>
+                    <active>true</active>
+                    <buildCategories/>
+                    <property name="source">$P(absoluteInstallLocation)/logs</property>
+                    <property name="target"/>
+                    <property name="action">2</property>
+                    <property name="runtime">1</property>
+                </action>
+                <action class="com.installshield.extras.product.FileSystemManipulation" id="uninstallwebapps">
+                    <displayName>File System Manipulation</displayName>
+                    <active>true</active>
+                    <buildCategories/>
+                    <property name="source">$P(absoluteInstallLocation)/webapps</property>
+                    <property name="target"/>
+                    <property name="action">2</property>
+                    <property name="runtime">1</property>
+                </action>
+                <action class="com.installshield.extras.product.FileSystemManipulation" id="uninstallwork">
+                    <displayName>File System Manipulation</displayName>
+                    <active>true</active>
+                    <buildCategories/>
+                    <property name="source">$P(absoluteInstallLocation)/work</property>
+                    <property name="target"/>
+                    <property name="action">2</property>
+                    <property name="runtime">1</property>
+                </action>
+            </component>
+        </feature>
+        <feature id="TrustGatewayToolkitFeature">
+            <key>
+                <uid>fad8450000e0c09386bd5043fe7e4eeb</uid>
+                <version/>
+            </key>
+            <built>19691131 160000.000-0800</built>
+            <name>TrustGateway toolkit feature</name>
+            <displayName>TrustGateway toolkit</displayName>
+            <shareable>false</shareable>
+            <activeForUninstall>true</activeForUninstall>
+            <active>true</active>
+            <installStatus>0</installStatus>
+            <replaceOption>0</replaceOption>
+            <removeOption>0</removeOption>
+            <installFailureOption>1</installFailureOption>
+            <visible>true</visible>
+            <buildCategories/>
+            <component id="TrustGatewayToolkitComponent">
+                <key>
+                    <uid>791d16fb44f40b8337cd718ffc220a2e</uid>
+                    <version/>
+                </key>
+                <built>19691131 160000.000-0800</built>
+                <name>component9</name>
+                <displayName>TrustGateway toolkit</displayName>
+                <shareable>false</shareable>
+                <activeForUninstall>true</activeForUninstall>
+                <active>true</active>
+                <installStatus>0</installStatus>
+                <replaceOption>0</replaceOption>
+                <removeOption>0</removeOption>
+                <installFailureOption>3</installFailureOption>
+                <onFailSummaryMessage/>
+                <buildCategories/>
+                <action class="com.installshield.product.actions.Files" id="toolkitFiles">
+                    <displayName>Files</displayName>
+                    <active>true</active>
+                    <buildCategories/>
+                    <property name="archiveIndexEntry">777/17</property>
+                    <property name="totalBytes">3812686</property>
+                    <property name="owner"/>
+                    <property name="group"/>
+                    <property name="storedAs">0</property>
+                    <property name="externalResourceLocation"/>
+                    <property name="externalResourceMediaId">1</property>
+                </action>
+            </component>
+        </feature>
+        <feature id="WSSecurityFeature">
+            <key>
+                <uid>671d4ffbd22d7e4e8579be1373a345f2</uid>
+                <version/>
+            </key>
+            <built>19691131 160000.000-0800</built>
+            <name>WS-Security Feature</name>
+            <displayName>WS-Security</displayName>
+            <shareable>false</shareable>
+            <activeForUninstall>true</activeForUninstall>
+            <active>true</active>
+            <installStatus>0</installStatus>
+            <replaceOption>0</replaceOption>
+            <removeOption>0</removeOption>
+            <installFailureOption>1</installFailureOption>
+            <visible>true</visible>
+            <buildCategories/>
+            <component id="WSSecurityComponent">
+                <key>
+                    <uid>fee0303f575862d3d14bfa78390b5d57</uid>
+                    <version/>
+                </key>
+                <built>19691131 160000.000-0800</built>
+                <name>WS-Security</name>
+                <displayName>WS-Security</displayName>
+                <shareable>false</shareable>
+                <activeForUninstall>true</activeForUninstall>
+                <active>true</active>
+                <installStatus>0</installStatus>
+                <replaceOption>0</replaceOption>
+                <removeOption>0</removeOption>
+                <installFailureOption>3</installFailureOption>
+                <onFailSummaryMessage/>
+                <buildCategories/>
+                <action class="com.installshield.product.actions.Files" id="wssecurityFiles">
+                    <displayName>Files</displayName>
+                    <active>true</active>
+                    <buildCategories/>
+                    <property name="archiveIndexEntry">794/4</property>
+                    <property name="totalBytes">19098</property>
+                    <property name="owner"/>
+                    <property name="group"/>
+                    <property name="storedAs">0</property>
+                    <property name="externalResourceLocation"/>
+                    <property name="externalResourceMediaId">1</property>
+                </action>
+            </component>
+        </feature>
+        <feature id="WindowsServiceFeature">
+            <key>
+                <uid>a422012ef8841bb277860a65b25737b0</uid>
+                <version/>
+            </key>
+            <built>19691131 160000.000-0800</built>
+            <name>Windows Service Feature</name>
+            <displayName>Install as Windows Service</displayName>
+            <shareable>false</shareable>
+            <activeForUninstall>true</activeForUninstall>
+            <active>true</active>
+            <installStatus>0</installStatus>
+            <replaceOption>0</replaceOption>
+            <removeOption>0</removeOption>
+            <installFailureOption>1</installFailureOption>
+            <visible>true</visible>
+            <buildCategories/>
+            <condition id="platform" type="com.installshield.product.conditions.PlatformProductBeanCondition">
+                <property name="evaluate">1</property>
+                <property name="platform" type="com.installshield.util.Platform">
+                    <property name="arch">.</property>
+                    <property name="displayName">Windows (All)</property>
+                    <property name="name">Windows .*</property>
+                    <property name="version">.</property>
+                </property>
+                <property name="immutable">True</property>
+            </condition>
+            <component id="Windows Service Component">
+                <key>
+                    <uid>a1f04e8ed0cec153c2a5db9f122dcfa0</uid>
+                    <version/>
+                </key>
+                <built>19691131 160000.000-0800</built>
+                <name>Windows Service</name>
+                <displayName>Install As Windows Service</displayName>
+                <shareable>false</shareable>
+                <activeForUninstall>true</activeForUninstall>
+                <active>true</active>
+                <installStatus>0</installStatus>
+                <replaceOption>0</replaceOption>
+                <removeOption>0</removeOption>
+                <installFailureOption>3</installFailureOption>
+                <onFailSummaryMessage/>
+                <buildCategories/>
+                <action class="com.installshield.wizard.platform.win32.win32service.WindowsService" id="WindowService">
+                    <displayName>Install As Windows Service</displayName>
+                    <active>true</active>
+                    <buildCategories/>
+                    <property name="name">TrustGateway</property>
+                    <property name="config" type="com.installshield.wizard.platform.win32.win32service.NTServiceConfig">
+                        <property name="displayName">TrustGateway</property>
+                        <property name="serviceType">16</property>
+                        <property name="startType">2</property>
+                        <property name="errorControl">1</property>
+                        <property name="command">&quot;$P(absoluteInstallLocation)\bin\tgservice.exe&quot;</property>
+                        <property name="loadOrderGroup"/>
+                        <property array="True" length="0" name="dependencies" type="string"/>
+                        <property name="enableDesktopInteraction">False</property>
+                        <property name="userName"/>
+                        <property name="password"/>
+                    </property>
+                    <property name="enableFailureActions">False</property>
+                    <property name="failureActions" type="com.installshield.wizard.platform.win32.win32service.Win2kServiceFailureActions">
+                        <property name="resetPeriod">0</property>
+                        <property name="rebootMsg"/>
+                        <property name="command"/>
+                        <property array="True" length="0" name="actions" type="com.installshield.wizard.platform.win32.win32service.Win2kSCAction"/>
+                    </property>
+                    <property name="serviceDescription">Secures machine-to-machine, XML-formatted messages sent over 
+HTTP</property>
+                    <property array="True" length="0" name="startArguments" type="string"/>
+                    <property name="startAfterInstalling">False</property>
+                    <property name="removeOnUninstall">True</property>
+                    <property name="installedName"/>
+                </action>
+                <action class="com.verisign.wsproxy.installer.ModifyRegistry" id="ModifyRegistryBean">
+                    <displayName>ModifyRegistry</displayName>
+                    <active>true</active>
+                    <buildCategories/>
+                </action>
+                <action class="com.installshield.product.actions.DesktopIcon" id="ServiceStartupIcon">
+                    <displayName>Desktop Icon</displayName>
+                    <active>true</active>
+                    <buildCategories/>
+                    <extendedProperty name="win32ppk" type="com.installshield.wizard.platform.win32.Win32DesktopIconExtra">
+                        <property name="folderContext">$UserPrograms$</property>
+                        <property name="iconFile"/>
+                        <property name="iconFileType">1</property>
+                        <property name="platformSpecificTarget">$D(lib)\net.exe</property>
+                        <property name="relativePlatformSpecificTarget">False</property>
+                    </extendedProperty>
+                    <property name="folder">Trust Gateway</property>
+                    <property name="name">Start TrustGateway</property>
+                    <property name="target"/>
+                    <property name="relativeTarget">False</property>
+                    <property name="args">start TrustGateway</property>
+                    <property name="workingDirectory"/>
+                    <property name="workingDirectoryRelative">False</property>
+                    <property name="itemOwner"/>
+                    <property name="itemGroup"/>
+                    <property name="folderOwner"/>
+                    <property name="folderGroup"/>
+                    <property name="installedIconFile"/>
+                    <property name="installedFolder"/>
+                    <property name="installedName"/>
+                    <property name="scriptFile"/>
+                </action>
+                <action class="com.installshield.product.actions.DesktopIcon" id="ServiceShutdownIcon">
+                    <displayName>Desktop Icon</displayName>
+                    <active>true</active>
+                    <buildCategories/>
+                    <extendedProperty name="win32ppk" type="com.installshield.wizard.platform.win32.Win32DesktopIconExtra">
+                        <property name="folderContext">$UserPrograms$</property>
+                        <property name="iconFile"/>
+                        <property name="iconFileType">1</property>
+                        <property name="platformSpecificTarget">$D(lib)\net.exe</property>
+                        <property name="relativePlatformSpecificTarget">False</property>
+                    </extendedProperty>
+                    <property name="folder">Trust Gateway</property>
+                    <property name="name">Stop TrustGateway</property>
+                    <property name="target"/>
+                    <property name="relativeTarget">False</property>
+                    <property name="args">stop TrustGateway</property>
+                    <property name="workingDirectory"/>
+                    <property name="workingDirectoryRelative">False</property>
+                    <property name="itemOwner"/>
+                    <property name="itemGroup"/>
+                    <property name="folderOwner"/>
+                    <property name="folderGroup"/>
+                    <property name="installedIconFile"/>
+                    <property name="installedFolder"/>
+                    <property name="installedName"/>
+                    <property name="scriptFile"/>
+                </action>
+                <action class="com.installshield.product.actions.EnvironmentVariableUpdate" id="UpdatePath">
+                    <displayName>Environment Variable Update</displayName>
+                    <active>true</active>
+                    <buildCategories/>
+                    <extendedProperty name="win32ppk" type="com.installshield.wizard.platform.win32.Win32EnvironmentVariableUpdateExtra">
+                        <property name="level">1</property>
+                    </extendedProperty>
+                    <property name="variableName">Path</property>
+                    <property name="variableValue">$P(absoluteInstallLocation)/jvm1.4.1.2/bin/client</property>
+                    <property name="operation">2</property>
+                    <property name="includePathSeparator">True</property>
+                    <property name="rebootRequired">True</property>
+                    <property name="normalizePath">True</property>
+                    <property name="installedVariableName"/>
+                    <property name="installedVariableValue"/>
+                </action>
+            </component>
+        </feature>
+    </product>
+</productTree>

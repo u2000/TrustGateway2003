@@ -1,0 +1,45 @@
+
+<wizardTree>
+    <wizardRoot>
+        <wizardBean class="com.installshield.product.wizardbeans.UninstallWelcomePanel" id="welcome">
+            <property name="displayName">Welcome Panel</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="title"/>
+            <property name="description"/>
+            <property name="navigationOptions">0</property>
+            <property name="text">$L(com.installshield.product.i18n.ProductResources, UninstallWelcomePanel.message, $P(displayName), $P(displayName), $P(displayName), $P(vendor), $P(vendorWebsite))</property>
+            <property name="textSource">1</property>
+            <property name="fileName"/>
+            <property name="fileEncoding"/>
+            <property name="resolveFileContents">False</property>
+            <property name="includeLocalizedFiles">False</property>
+            <property name="contentType">2</property>
+            <property name="showBorder">True</property>
+        </wizardBean>
+        <wizardBean class="com.installshield.product.wizardbeans.SummaryPanel" id="preview">
+            <property name="displayName">Uninstall Preview</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="title"/>
+            <property name="description"/>
+            <property name="navigationOptions">0</property>
+            <property name="type">3</property>
+        </wizardBean>
+        <wizardBean class="com.installshield.product.wizardbeans.UninstallAction" id="uninstall">
+            <property name="displayName">Uninstall</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="cancelable">False</property>
+        </wizardBean>
+        <wizardBean class="com.installshield.product.wizardbeans.SummaryPanel" id="summary">
+            <property name="displayName">Uninstall Summary</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="title"/>
+            <property name="description"/>
+            <property name="navigationOptions">0</property>
+            <property name="type">4</property>
+        </wizardBean>
+    </wizardRoot>
+</wizardTree>

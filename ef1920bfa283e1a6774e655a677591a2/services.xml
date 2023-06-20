@@ -1,0 +1,126 @@
+
+<services>
+    <service name="logService">
+        <interface>com.installshield.wizard.service.log.LogService</interface>
+        <defaultImpl>com.installshield.wizard.service.log.GenericLogService</defaultImpl>
+    </service>
+    <service name="wizardInitializeService">
+        <interface>com.installshield.wizard.service.initialize.WizardInitializeService</interface>
+        <defaultImpl>com.installshield.wizard.service.initialize.GenericWizardInitializeService</defaultImpl>
+    </service>
+    <service name="fileService">
+        <interface>com.installshield.wizard.service.file.FileService</interface>
+        <defaultImpl>com.installshield.wizard.service.file.GenericFileService</defaultImpl>
+    </service>
+    <service name="exitCodeService">
+        <interface>com.installshield.wizard.service.exitcode.ExitCodeService</interface>
+        <defaultImpl>com.installshield.wizard.service.exitcode.GenericExitCodeService</defaultImpl>
+    </service>
+    <service name="securityService">
+        <interface>com.installshield.wizard.service.security.SecurityService</interface>
+        <defaultImpl>com.installshield.wizard.service.security.GenericSecurityService</defaultImpl>
+    </service>
+    <service name="win32Service">
+        <interface>com.installshield.wizard.platform.win32.Win32Service</interface>
+        <defaultImpl>com.installshield.wizard.platform.win32.GenericWin32Service</defaultImpl>
+    </service>
+    <service name="jvmService">
+        <interface>com.installshield.wizard.service.jvm.JVMService</interface>
+        <defaultImpl>com.installshield.wizard.service.jvm.GenericJVMService</defaultImpl>
+    </service>
+    <service name="desktopService">
+        <interface>com.installshield.product.service.desktop.DesktopService</interface>
+        <defaultImpl>com.installshield.product.service.desktop.GenericDesktopService</defaultImpl>
+    </service>
+    <service name="registryService">
+        <interface>com.installshield.product.service.registry.RegistryService</interface>
+        <defaultImpl>com.installshield.product.service.registry.GenericRegistryService</defaultImpl>
+    </service>
+    <service name="win32RegistryService">
+        <interface>com.installshield.wizard.platform.win32.Win32RegistryService</interface>
+        <defaultImpl>com.installshield.wizard.platform.win32.GenericWin32RegistryService</defaultImpl>
+    </service>
+    <service name="productService">
+        <interface>com.installshield.product.service.product.ProductService</interface>
+        <defaultImpl>com.installshield.product.service.product.GenericProductService</defaultImpl>
+    </service>
+    <service name="systemUtilService">
+        <interface>com.installshield.wizard.service.system.SystemUtilService</interface>
+        <defaultImpl>com.installshield.wizard.service.system.GenericSystemUtilService</defaultImpl>
+    </service>
+    <implementor name="logService">
+        <interface>com.installshield.wizard.service.log.LogServiceImplementor</interface>
+        <defaultImpl>com.installshield.wizard.service.log.PureJavaLogServiceImpl</defaultImpl>
+    </implementor>
+    <implementor name="wizardInitializeService">
+        <interface>com.installshield.wizard.service.initialize.WizardInitializeServiceImplementor</interface>
+        <defaultImpl>com.installshield.wizard.service.initialize.PureJavaWizardInitializeServiceImpl</defaultImpl>
+        <impl>com.ibm.wizard.platform.linux.LinuxWizardInitializeServiceImpl</impl>
+        <impl>com.installshield.wizard.platform.win32.Win32WizardInitializeServiceImpl</impl>
+    </implementor>
+    <implementor name="fileService">
+        <interface>com.installshield.wizard.service.file.FileServiceImplementor</interface>
+        <defaultImpl>com.installshield.wizard.service.file.PureJavaFileServiceImpl</defaultImpl>
+        <impl>com.ibm.wizard.platform.linux.LinuxFileServiceImpl</impl>
+        <impl>com.installshield.wizard.platform.solaris.SolarisFileServiceImpl</impl>
+        <impl>com.installshield.wizard.platform.win32.Win32FileServiceImpl</impl>
+    </implementor>
+    <implementor name="exitCodeService">
+        <interface>com.installshield.wizard.service.exitcode.ExitCodeServiceImplementor</interface>
+        <defaultImpl>com.installshield.wizard.service.exitcode.PureJavaExitCodeServiceImpl</defaultImpl>
+    </implementor>
+    <implementor name="securityService">
+        <interface>com.installshield.wizard.service.security.SecurityServiceImplementor</interface>
+        <defaultImpl>com.installshield.wizard.service.security.PureJavaSecurityServiceImpl</defaultImpl>
+        <impl>com.installshield.wizard.platform.solaris.SolarisSecurityServiceImpl</impl>
+        <impl>com.ibm.wizard.platform.linux.LinuxSecurityServiceImpl</impl>
+        <impl>com.installshield.wizard.platform.win32.Win32SecurityServiceImpl</impl>
+    </implementor>
+    <implementor name="win32Service">
+        <interface>com.installshield.wizard.platform.win32.Win32ServiceImplementor</interface>
+        <defaultImpl>com.installshield.wizard.platform.win32.Win32ServiceImpl</defaultImpl>
+    </implementor>
+    <implementor name="jvmService">
+        <interface>com.installshield.wizard.service.jvm.JVMServiceImplementor</interface>
+        <defaultImpl>com.installshield.wizard.service.jvm.PureJavaJVMServiceImpl</defaultImpl>
+        <impl>com.ibm.wizard.platform.linux.LinuxJVMServiceImpl</impl>
+        <impl>com.installshield.wizard.platform.solaris.SolarisJVMServiceImpl</impl>
+        <impl>com.installshield.wizard.platform.win32.Win32JVMServiceImpl</impl>
+    </implementor>
+    <implementor name="desktopService">
+        <interface>com.installshield.product.service.desktop.DesktopServiceImplementor</interface>
+        <defaultImpl>com.installshield.product.service.desktop.PureJavaDesktopServiceImpl</defaultImpl>
+        <impl>com.ibm.wizard.platform.linux.LinuxDesktopServiceImpl</impl>
+        <impl>com.installshield.wizard.platform.solaris.SolarisDesktopServiceImpl</impl>
+        <impl>com.installshield.wizard.platform.win32.Win32DesktopServiceImpl</impl>
+    </implementor>
+    <implementor name="registryService">
+        <interface>com.installshield.product.service.registry.RegistryServiceImplementor</interface>
+        <defaultImpl>com.installshield.product.service.registry.PureJavaRegistryServiceImpl</defaultImpl>
+        <impl>com.installshield.wizard.platform.solaris.SolarisRegistryServiceImpl</impl>
+        <impl>com.ibm.wizard.platform.linux.LinuxRegistryServiceImpl</impl>
+        <impl>com.installshield.wizard.platform.win32.Win32PPKRegistryServiceImpl</impl>
+    </implementor>
+    <implementor name="win32RegistryService">
+        <interface>com.installshield.wizard.platform.win32.Win32RegistryServiceImplementor</interface>
+        <defaultImpl>com.installshield.wizard.platform.win32.Win32RegistryServiceImpl</defaultImpl>
+    </implementor>
+    <implementor name="productService">
+        <interface>com.installshield.product.service.product.ProductServiceImplementor</interface>
+        <defaultImpl>com.installshield.product.service.product.PureJavaProductServiceImpl</defaultImpl>
+        <impl>com.ibm.wizard.platform.linux.LinuxProductServiceImpl</impl>
+        <impl>com.installshield.wizard.platform.win32.Win32ProductServiceImpl</impl>
+    </implementor>
+    <implementor name="systemUtilService">
+        <interface>com.installshield.wizard.service.system.SystemUtilServiceImplementor</interface>
+        <defaultImpl>com.installshield.wizard.service.system.PureJavaSystemUtilServiceImpl</defaultImpl>
+        <impl>com.ibm.wizard.platform.linux.LinuxSystemUtilServiceImpl</impl>
+        <impl>com.installshield.wizard.platform.solaris.SolarisSystemUtilServiceImpl</impl>
+        <impl>com.installshield.wizard.platform.win32.Win32SystemUtilServiceImpl</impl>
+    </implementor>
+    <stringResolverMethod className="com.installshield.wizard.JavaPropertiesMethod"/>
+    <stringResolverMethod className="com.installshield.wizard.service.file.NamedDirectoryMethod"/>
+    <stringResolverMethod className="com.installshield.util.LocalizedStringResolver"/>
+    <stringResolverMethod className="com.installshield.product.service.product.ProductBeanPropertyMethod"/>
+    <resourcePath/>
+</services>

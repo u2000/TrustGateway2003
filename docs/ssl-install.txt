@@ -1,0 +1,248 @@
+Configuring the Trust Gateway to use SSL
+----------------------------------------
+
+To use SSL with the Trust Gateway, either for securing the Gateway
+Administration Console or for securing Web Services, you must follow the
+instructions below for installing a SSL server certificate for your
+TrustGateway.
+
+Notes: 
+
+  * References to ${trustgateway} point to the directory where you 
+    installed the trustgateway.
+
+  * You must store your SSL server certificate in the 
+    following keystore file:
+
+      ${trustgateway}/webapps/gateway/keystore/serverkeys
+
+  * The -storepass you provide for 'serverkeys' must be the same as the 
+    password specified in the Trust Gateway Administration Console for 
+    your 'keys' and 'trustpoints' keystores.
+  
+  * If you have not run the console yet, you must remember the -keystore
+    password you use below and provide it when you start the console.  If you
+    have already run the console and input this password, then use the same
+    password for the -keystore password below. 
+
+  * The alias for SSL server certificate must be 'tomcat'.
+
+  * The password for the tomcat alias must be the same as the password for the
+    keystore.
+
+  * You must use the Java 'keytool' command installed by the Gateway. Assuming
+    that your Gateway installation directory is D:\TrustGateway, an example
+    command on Windows would be:
+
+      D:\TrustGateway\jvm1.4.1.2\bin\keytool
+
+    If you run just 'keytool' without a path it is very possible that you 
+    will be running the keytool from a different Java installation, and this 
+    will not perform the installation correctly.  Be sure to use the full 
+    path to the keytool program installed under TrustGateway as shown above.
+
+
+
+Step 1: Generate a server SSL key
+---------------------------------
+
+* From a command prompt, change to the TrustGateway keystores directory:
+
+  >> cd ${trustgateway}/webapps/gateway/keystores/
+
+* Generate your key in the serverkeys keystore using the following command.
+  Replace all fields in CAPITALS with the proper values. See notes below:
+
+  >> ${trustgateway}/jvm1.4.1.2/bin/keytool -genkey -alias tomcat \
+     -keyalg RSA -keysize 1024 -dname \ 
+     "CN=MY.HOST.NAME, OU=DEPT, O=COMPANY, L=LOCALITY, ST=STATE, C=COUNTRY" \
+     -keystore serverkeys -storepass PASSWORD -keypass PASSWORD
+
+Notes:
+
+* MY.HOST.NAME is the full host and domain name of the TrustGateway machine.
+
+* DEPT, COMPANY, LOCALITY, STATE and COUNTRY identify your company 
+  information. 
+
+* Note that STATE must be a full state name (e.g., California) and COUNTRY 
+  is a 2 letter country code (e.g., US). PASSWORD is the keystore and key 
+  password. 
+
+* PASSWORD is the value already input into the console for the keys and
+  trustpoints keystores (if you have already run the console) or the value 
+  to be input later in the console.
+
+
+
+Step 2: Generate a CSR (certificate signing request)
+----------------------------------------------------
+
+* In the TrustGateway keystores directory, run the following command: 
+
+  >> ${trustgateway}/jvm1.4.1.2/bin/keytool -certreq -file csr.txt \
+     -alias tomcat -keyalg RSA -keystore serverkeys -storepass PASSWORD
+
+  This creates the certificate request in the file csr.txt.
+
+
+
+Step 3: Send the CSR to VeriSign
+--------------------------------
+
+* Follow the procedure for obtaining a server SSL certificate from VeriSign.
+
+  You may either obtain a free trial SSL Server ID or purchase a 
+  production SSL Server ID.
+
+  - To obtain a trial SSL certificate, visit:
+
+      http://www.verisign.com/products/srv/trial/step1.html
+
+  - To obtain a production SSL certificate, visit:
+
+      http://www.verisign.com/products/site/commerce/index.html
+
+  Each process requires that you paste the CSR generated in Step 2 into 
+  a Web page. 
+
+* When prompted during the enrollment process, edit the certificate 
+  request csr.txt file with a text editor. 
+
+* Then copy-and-paste the contents of csr.txt into the text field. 
+
+
+
+Step 4. Install the VeriSign Test CA in your Java cacerts file
+--------------------------------------------------------------
+
+
+     NOTE. This step is only necessary for free trial SSL 
+	   certificates. Skip this step entirely if you have 
+	   purchased a production installation.
+
+
+* Locate the test CA certificate called testcaroot.cer in the /docs 
+  directory of the Trust Gateway Installation.
+
+  Copy this file to the Java security directory of your TrustGateway 
+  installation.
+
+  >> cp testcaroot.cer ${trustgateway}/jvm1.4.1.2/jre/lib/security/
+
+* Import the test CA certificate into the cacerts file in the Trust 
+  Gateway installation.
+
+  >> cd ${trustgateway}/jvm1.4.1.2/jre/lib/security/
+
+  >> ${trustgateway}/jvm1.4.1.2/bin/keytool -import -file testcaroot.cer \
+     -alias testcaroot -keystore cacerts -storepass changeit
+
+
+
+Step 5: Install the test XKMS CA into your Java cacerts file 
+------------------------------------------------------------
+
+For a test installation, install the xkmstestca.cer file provided in 
+the Trust Gateway distribution as instructed below.
+
+For production installations, you must obtain the CA cert for your XKMS
+account. You can retrieve this certificate by running the Trust Gateway
+Administration Console. 
+
+The XKMS CA certifictate is stored in the keystore called 'trustpoints', 
+which is created in the ${trustgateway}/webapps/gateway/keystore 
+directory of your Trust Gateway installation. Export this certificate and 
+then copy it into your cacerts file. If you do this, you can skip the 
+rest of Step 5.
+
+* Locate the XKMS test CA certificate called xkmstestca.cer in the /docs
+  directory of the Trust Gateway Installation.
+
+  Copy this file to the Java security directory of your TrustGateway 
+  installation.
+
+  >> cp xkmstestca.cer ${trustgateway}/jvm1.4.1.2/jre/lib/security/
+
+* Import the XKMS CA certificate into the cacerts file in the Trust 
+  Gateway installation.
+
+  >> ${trustgateway}/jvm1.4.1.2/bin/keytool -import -file xkmstestca.cer \
+     -alias testxkmsca -keystore cacerts -storepass changeit
+
+
+
+Step 6: Install the final certificate you receive from VeriSign
+---------------------------------------------------------------
+
+* You will receive your SSL Server ID in an email from VeriSign.  Trial
+  certificates arrive immediately. Production certificates arrive after 
+  you have been properly authenticated by VeriSign.
+
+  The certificate will be delivered either as an attachment to the email 
+  with a .cer extension, or it will be contained in text format in the body 
+  of the email message. 
+
+  For text format certificates: 
+
+  - Copy the certificate from the email you receive from VeriSign into a 
+    file named cert.txt
+
+  For attached .cer certificates:
+
+  - Save the attached file to the ${trustgateway}/webapps/gateway/keystore 
+    directory
+
+* Install the certificate into your serverkeys keystore:
+
+  >> cd ${trustgateway}/webapps/gateway/keystores
+
+  >> ${trustgateway}/jvm1.4.1.2/bin/keytool -import -alias tomcat \
+     -file cert.txt -keystore serverkeys -storepass PASSWORD \
+     -keypass PASSWORD -trustcacerts
+
+  If an error occurs saying the certificate chain could not be completed 
+  from reply, one of two things may have caused this:
+
+  a) For a test installation, you did not install the testcaroot.cer file 
+     in step 4 above.
+
+  b) You are not running keytool for the same Java installation as used by 
+     the gateway -- check your PATH environment variable, or run the keytool 
+     command with the full path to the Trust Gateway JVM
+
+     For example:       D:\TrustGateway\jvm1.4.1.2\bin\keytool 
+
+
+
+Step 7: Use your SSL port
+-------------------------
+
+You can now run the Trust Gateway Administration Console and configure gates
+with SSL security.  See the console documentation and help for more
+information on use gates with SSL security.
+
+You can also use SSL to access the console from your browser; however, you
+must first deploy the Trust Gateway to activate the SSL console port.  The
+default console SSL port is 8444.  Normally you would follow these steps:
+
+* Run the console normally using the standard http://HOST:8080/console URL
+
+* Deploy the gateway using the Deploy button on the Gates page
+
+* Run the console using the https://HOST:8443/console URL
+
+
+  NOTE. When running the console with the https URL, you MUST use the 
+	fully qualified host name, for which you registered your SSL 
+	certificate.  
+
+	If you use a different host name or a partial host name, you 
+	will not be able to deploy the gateway successfully.
+
+
+
+
+Thanks,
+The VeriSign Trust Gateway Team 
+

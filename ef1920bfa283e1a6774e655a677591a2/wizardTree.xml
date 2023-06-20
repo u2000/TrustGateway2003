@@ -1,0 +1,620 @@
+
+<wizardTree>
+    <wizardRoot>
+        <wizardBean class="com.installshield.wizardx.actions.SetUMaskWizardAction" id="bean3">
+            <condition id="platform" type="com.installshield.wizardx.conditions.PlatformWizardBeanCondition">
+                <property name="evaluate">1</property>
+                <property name="platform" type="com.installshield.util.Platform">
+                    <property name="arch">sparc</property>
+                    <property name="displayName">All versions of Solaris on SPARC</property>
+                    <property name="name">Solaris\|SunOS</property>
+                    <property name="version">.</property>
+                </property>
+                <property name="immutable">True</property>
+            </condition>
+            <condition id="platform2" type="com.installshield.wizardx.conditions.PlatformWizardBeanCondition">
+                <property name="evaluate">1</property>
+                <property name="platform" type="com.installshield.util.Platform">
+                    <property name="arch">.</property>
+                    <property name="displayName">Linux Platform</property>
+                    <property name="name">Linux</property>
+                    <property name="version">.</property>
+                </property>
+                <property name="immutable">True</property>
+            </condition>
+            <property name="displayName">Set Umask Wizard Action</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="cancelable">False</property>
+            <property name="mask">755</property>
+        </wizardBean>
+        <wizardBean class="com.installshield.wizardx.actions.WizardLogAction" id="wizardLog">
+            <property name="displayName">Wizard Log Action</property>
+            <property name="active">False</property>
+            <property name="buildCategories"/>
+            <property name="cancelable">False</property>
+            <property name="logOutput">$(absoluteInstallLocation)/install.log</property>
+            <property name="optionalLogOutput"/>
+            <property name="isOutputEnabled">True</property>
+            <property name="isStdoutEnabled">False</property>
+            <property name="isLogAllEvents">True</property>
+            <property name="isLogExceptionStackTraces">True</property>
+            <property name="isOptionalOutputEnabled">False</property>
+            <property array="True" length="2" name="eventsLogged" type="string">
+                <arrayItem>err</arrayItem>
+                <arrayItem>wrn</arrayItem>
+            </property>
+        </wizardBean>
+        <wizardBean class="com.installshield.product.wizardbeans.WelcomePanel" id="welcome">
+            <property name="displayName">Welcome Panel</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="title"/>
+            <property name="description"/>
+            <property name="navigationOptions">6</property>
+            <property name="text">$L(com.installshield.product.i18n.ProductResources, WelcomePanel.message, $P(displayName), $P(displayName), $P(displayName), $P(vendor), $P(vendorWebsite))</property>
+            <property name="textSource">1</property>
+            <property name="fileName"/>
+            <property name="fileEncoding"/>
+            <property name="resolveFileContents">False</property>
+            <property name="includeLocalizedFiles">False</property>
+            <property name="contentType">2</property>
+            <property name="showBorder">True</property>
+        </wizardBean>
+        <wizardBean class="com.installshield.wizardx.panels.TextDisplayPanel" id="checkAdmin">
+            <condition id="Admin Condition" type="com.installshield.extras.wizard.condition.AdminCondition">
+                <property name="evaluate">2</property>
+                <property name="immutable">False</property>
+            </condition>
+            <condition id="platform" type="com.installshield.wizardx.conditions.PlatformWizardBeanCondition">
+                <property name="evaluate">2</property>
+                <property name="platform" type="com.installshield.util.Platform">
+                    <property name="arch">.</property>
+                    <property name="displayName">Windows (All)</property>
+                    <property name="name">Windows .*</property>
+                    <property name="version">.</property>
+                </property>
+                <property name="immutable">True</property>
+            </condition>
+            <property name="displayName">Text Display Panel</property>
+            <property name="active">False</property>
+            <property name="buildCategories"/>
+            <property name="title"/>
+            <property name="description">You must have admin privileges to run the TrustGateway.</property>
+            <property name="navigationOptions">4</property>
+            <property name="text">You must have admin privileges to run and install the TrustGateway.</property>
+            <property name="textSource">1</property>
+            <property name="fileName"/>
+            <property name="fileEncoding"/>
+            <property name="resolveFileContents">False</property>
+            <property name="includeLocalizedFiles">False</property>
+            <property name="contentType">2</property>
+            <property name="showBorder">True</property>
+        </wizardBean>
+        <wizardBean class="com.installshield.product.wizardbeans.LicensePanel" id="licensePanel">
+            <property name="displayName">License Panel</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="title">$L(com.installshield.product.i18n.ProductResources, LicensePanel.title)</property>
+            <property name="description">Please read the following license agreement.</property>
+            <property name="navigationOptions">0</property>
+            <property name="text"/>
+            <property name="textSource">2</property>
+            <property name="fileName">/home/nightly/wsproxy/installer/eula.txt</property>
+            <property name="fileEncoding"/>
+            <property name="resolveFileContents">False</property>
+            <property name="includeLocalizedFiles">False</property>
+            <property name="contentType">1</property>
+            <property name="showBorder">True</property>
+            <property name="approveCaption">$L(com.installshield.product.i18n.ProductResources, LicensePanel.approval)</property>
+            <property name="disapproveCaption">$L(com.installshield.product.i18n.ProductResources, LicensePanel.disapproval)</property>
+            <property name="consoleChoiceCaption">$L(com.installshield.wizardx.i18n.WizardXResources, ApprovalPanel.consoleChoiceCaption)</property>
+            <property name="selection">0</property>
+            <property name="uiType">3</property>
+            <property name="uiAlignment">1</property>
+            <property name="onDisapprove">1</property>
+            <property name="warningMessage"/>
+        </wizardBean>
+        <wizardBean class="com.installshield.wizardx.panels.GenericUserInputPanel" id="bean">
+            <property name="displayName">User Input Panel</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="title">$L(com.installshield.wizardx.i18n.WizardXResources, UserInputPanel.title)</property>
+            <property name="description"/>
+            <property name="navigationOptions">0</property>
+            <property name="caption">You need to enter a valid Product key to continue the installation.</property>
+            <property name="validator">com.verisign.wsproxy.installer.SerialNumberValidator</property>
+            <property array="True" length="1" name="userInputFields" type="com.installshield.wizardx.panels.GenericInputField">
+                <arrayItem type="com.installshield.wizardx.panels.TextInputField">
+                    <property name="name">serialnumber</property>
+                    <property name="caption">Enter product key, or leave empty to install an Evaluation version of the software</property>
+                    <property name="validator"/>
+                    <property name="optionsFileDocumentation"/>
+                    <property name="defaultValue"/>
+                </arrayItem>
+            </property>
+        </wizardBean>
+        <wizardBean class="com.installshield.product.wizardbeans.DestinationPanel" id="destination">
+            <property name="displayName">Destination</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="title"/>
+            <property name="description">$L(com.installshield.product.i18n.ProductResources, DestinationPanel.description, $P(displayName))</property>
+            <property name="navigationOptions">0</property>
+        </wizardBean>
+        <wizardBean class="com.installshield.product.wizardbeans.SetupTypePanel" id="setupType">
+            <property name="displayName">Setup Type Panel</property>
+            <property name="active">False</property>
+            <property name="buildCategories"/>
+            <property name="title"/>
+            <property name="description">$L(com.installshield.product.i18n.ProductResources, SetupTypePanel.description)</property>
+            <property name="navigationOptions">0</property>
+            <property name="selectedSetupTypeId">setup_full</property>
+            <property array="True" length="2" name="setupTypes" type="com.installshield.product.wizardbeans.SetupType">
+                <arrayItem type="com.installshield.product.wizardbeans.SetupType">
+                    <property name="description">Installs the TrustGateway server, TrustGateway toolkit, and WS-Security.</property>
+                    <property name="displayName">Full</property>
+                    <property array="True" length="4" name="features" type="string">
+                        <arrayItem>TrustGatewayServerFeature</arrayItem>
+                        <arrayItem>TrustGatewayToolkitFeature</arrayItem>
+                        <arrayItem>WSSecurityFeature</arrayItem>
+                        <arrayItem>WindowsServiceFeature</arrayItem>
+                    </property>
+                    <property name="id">setup_full</property>
+                </arrayItem>
+                <arrayItem type="com.installshield.product.wizardbeans.SetupType">
+                    <property name="description">Allows you to select features you want.   Recommended for advanced users.</property>
+                    <property name="displayName">Custom</property>
+                    <property array="True" length="3" name="features" type="string">
+                        <arrayItem>TrustGatewayServerFeature</arrayItem>
+                        <arrayItem>TrustGatewayToolkitFeature</arrayItem>
+                        <arrayItem>WSSecurityFeature</arrayItem>
+                    </property>
+                    <property name="id">setup_custom</property>
+                </arrayItem>
+            </property>
+        </wizardBean>
+        <wizardBean class="com.installshield.product.wizardbeans.FeaturePanel" id="featurePanel">
+            <property name="displayName">Feature Panel</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="title"/>
+            <property name="description">$L(com.installshield.product.i18n.ProductResources, FeaturePanel.description, $P(displayName))</property>
+            <property name="navigationOptions">0</property>
+            <property name="rootDisplayName">$L(com.installshield.product.i18n.ProductResources, FeaturePanel.rootNodeName)</property>
+        </wizardBean>
+        <wizardBean class="com.installshield.wizardx.panels.GenericUserInputPanel" id="WindowsServiceBean">
+            <condition id="Admin Condition" type="com.installshield.extras.wizard.condition.AdminCondition">
+                <property name="evaluate">2</property>
+                <property name="immutable">False</property>
+            </condition>
+            <condition id="platform" type="com.installshield.wizardx.conditions.PlatformWizardBeanCondition">
+                <property name="evaluate">1</property>
+                <property name="platform" type="com.installshield.util.Platform">
+                    <property name="arch">.</property>
+                    <property name="displayName">Windows (All)</property>
+                    <property name="name">Windows .*</property>
+                    <property name="version">.</property>
+                </property>
+                <property name="immutable">True</property>
+            </condition>
+            <condition id="Feature Active" type="com.verisign.wsproxy.installer.WindowsServiceSelectedCondition">
+                <property name="evaluate">1</property>
+                <property name="immutable">False</property>
+            </condition>
+            <property name="displayName">User Input Panel</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="title">$L(com.installshield.wizardx.i18n.WizardXResources, UserInputPanel.title)</property>
+            <property name="description"/>
+            <property name="navigationOptions">0</property>
+            <property name="caption">You must be administrator to install the Windows service.</property>
+            <property name="validator"/>
+            <property array="True" length="0" name="userInputFields" type="com.installshield.wizardx.panels.GenericInputField"/>
+        </wizardBean>
+        <wizardBean class="com.installshield.product.wizardbeans.LicensePanel" id="WSSecLicensePanel">
+            <condition id="Feature Active" type="com.verisign.wsproxy.installer.WSSecuritySelectedCondition">
+                <property name="evaluate">1</property>
+                <property name="immutable">False</property>
+            </condition>
+            <property name="displayName">License Panel</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="title">WS-Security License Agreement</property>
+            <property name="description">WS-Security License Information: $L(com.installshield.product.i18n.ProductResources, LicensePanel.description)</property>
+            <property name="navigationOptions">0</property>
+            <property name="text">WS Security license info goes here</property>
+            <property name="textSource">2</property>
+            <property name="fileName">/home/nightly/wsproxy/installer/wssecurity-license.txt</property>
+            <property name="fileEncoding"/>
+            <property name="resolveFileContents">False</property>
+            <property name="includeLocalizedFiles">False</property>
+            <property name="contentType">1</property>
+            <property name="showBorder">True</property>
+            <property name="approveCaption">$L(com.installshield.product.i18n.ProductResources, LicensePanel.approval)</property>
+            <property name="disapproveCaption">$L(com.installshield.product.i18n.ProductResources, LicensePanel.disapproval)</property>
+            <property name="consoleChoiceCaption">$L(com.installshield.wizardx.i18n.WizardXResources, ApprovalPanel.consoleChoiceCaption)</property>
+            <property name="selection">0</property>
+            <property name="uiType">3</property>
+            <property name="uiAlignment">1</property>
+            <property name="onDisapprove">1</property>
+            <property name="warningMessage"/>
+        </wizardBean>
+        <wizardBean class="com.installshield.wizardx.panels.GenericUserInputPanel" id="userInput">
+            <condition id="Feature Active" type="com.verisign.wsproxy.installer.TGServerSelectedCondition">
+                <property name="evaluate">1</property>
+                <property name="immutable">False</property>
+            </condition>
+            <property name="displayName">User Input Panel</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="title">TrustGateway administrator information</property>
+            <property name="description"/>
+            <property name="navigationOptions">0</property>
+            <property name="caption">Enter the administrator user name and password that you wish to use.</property>
+            <property name="validator">com.verisign.wsproxy.installer.AdminInfoValidator</property>
+            <property array="True" length="3" name="userInputFields" type="com.installshield.wizardx.panels.GenericInputField">
+                <arrayItem type="com.installshield.wizardx.panels.TextInputField">
+                    <property name="name">adminUserName</property>
+                    <property name="caption">Administrator user name:</property>
+                    <property name="validator"/>
+                    <property name="optionsFileDocumentation"/>
+                    <property name="defaultValue"/>
+                </arrayItem>
+                <arrayItem type="com.installshield.wizardx.panels.PasswordInputField">
+                    <property name="name">adminPassword</property>
+                    <property name="caption">Administrator password:</property>
+                    <property name="validator"/>
+                    <property name="optionsFileDocumentation"/>
+                </arrayItem>
+                <arrayItem type="com.installshield.wizardx.panels.PasswordInputField">
+                    <property name="name">adminPasswordVerify</property>
+                    <property name="caption">Please verify your password:</property>
+                    <property name="validator"/>
+                    <property name="optionsFileDocumentation"/>
+                </arrayItem>
+            </property>
+        </wizardBean>
+        <wizardBean class="com.installshield.wizardx.panels.GenericUserInputPanel" id="portSelectionBean">
+            <property name="displayName">User Input Panel</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="title">$L(com.installshield.wizardx.i18n.WizardXResources, UserInputPanel.title)</property>
+            <property name="description"/>
+            <property name="navigationOptions">0</property>
+            <property name="caption">The following port will be used for administering the Trust Gateway:
+</property>
+            <property name="validator">com.verisign.wsproxy.installer.PortInUseValidator</property>
+            <property array="True" length="1" name="userInputFields" type="com.installshield.wizardx.panels.GenericInputField">
+                <arrayItem type="com.installshield.wizardx.panels.TextInputField">
+                    <property name="name">Port</property>
+                    <property name="caption">HTTP administration port</property>
+                    <property name="validator"/>
+                    <property name="optionsFileDocumentation"/>
+                    <property name="defaultValue">8776</property>
+                </arrayItem>
+            </property>
+        </wizardBean>
+        <wizardBean class="com.verisign.wsproxy.installer.TGSummaryPanel" id="InstallPreview">
+            <property name="displayName">Install Preview</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="title"/>
+            <property name="description"/>
+            <property name="navigationOptions">0</property>
+            <property name="type">1</property>
+        </wizardBean>
+        <wizardBean class="com.installshield.product.wizardbeans.InstallAction" id="install">
+            <property name="displayName">Install</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="cancelable">True</property>
+            <property name="billboards" type="com.installshield.product.wizardbeans.BillboardDisplayInfo">
+                <property name="backgroundColor">240,240,240</property>
+                <property array="True" length="0" name="billboards" type="com.installshield.product.wizardbeans.BillboardInfo"/>
+                <property name="enabled">False</property>
+                <property name="includeLocalizedImages">False</property>
+            </property>
+        </wizardBean>
+        <wizardBean class="com.installshield.product.wizardbeans.SummaryPanel" id="summary">
+            <property name="displayName">Install Summary</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="title"/>
+            <property name="description"/>
+            <property name="navigationOptions">0</property>
+            <property name="type">2</property>
+        </wizardBean>
+        <wizardBean class="com.installshield.wizardx.actions.AsciiFileUpdateWizardAction" id="updatestartupsh">
+            <condition id="Feature Active" type="com.verisign.wsproxy.installer.TGServerSelectedCondition">
+                <property name="evaluate">1</property>
+                <property name="immutable">False</property>
+            </condition>
+            <property name="displayName">ASCII File Update Wizard Action</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="cancelable">False</property>
+            <property name="asciiFile">$P(absoluteInstallLocation)/bin/startup.sh</property>
+            <property name="commentChars"/>
+            <property name="rebootRequired">False</property>
+            <property array="True" length="4" name="actions" type="com.installshield.wizardx.ascii.Update">
+                <arrayItem type="com.installshield.wizardx.ascii.SearchLine">
+                    <property array="True" length="1" name="tokens" type="string">
+                        <arrayItem>TRUSTGATEWAY_HOME=../</arrayItem>
+                    </property>
+                    <property name="respectCase">False</property>
+                    <property name="occurrenceFrequency">0</property>
+                    <property name="returnPosition">0</property>
+                    <property name="tokensNotFound">2</property>
+                    <property name="ignoreCommentLines">True</property>
+                </arrayItem>
+                <arrayItem type="com.installshield.wizardx.ascii.ReplaceLine">
+                    <property name="replaceOption">0</property>
+                    <property name="oldLine"/>
+                    <property array="True" length="1" name="newLines" type="string">
+                        <arrayItem>TRUSTGATEWAY_HOME=$P(absoluteInstallLocation)</arrayItem>
+                    </property>
+                </arrayItem>
+                <arrayItem type="com.installshield.wizardx.ascii.SearchLine">
+                    <property array="True" length="1" name="tokens" type="string">
+                        <arrayItem>JAVA_HOME=../jvm1.4.1.2</arrayItem>
+                    </property>
+                    <property name="respectCase">False</property>
+                    <property name="occurrenceFrequency">0</property>
+                    <property name="returnPosition">0</property>
+                    <property name="tokensNotFound">2</property>
+                    <property name="ignoreCommentLines">True</property>
+                </arrayItem>
+                <arrayItem type="com.installshield.wizardx.ascii.ReplaceLine">
+                    <property name="replaceOption">0</property>
+                    <property name="oldLine">JAVA_HOME=../jvm1.4.1.2</property>
+                    <property array="True" length="1" name="newLines" type="string">
+                        <arrayItem>JAVA_HOME=$P(absoluteInstallLocation)/jvm1.4.1.2</arrayItem>
+                    </property>
+                </arrayItem>
+            </property>
+            <property name="backupAsciiFile">False</property>
+            <property name="overwriteExistingFile">False</property>
+        </wizardBean>
+        <wizardBean class="com.installshield.wizardx.actions.AsciiFileUpdateWizardAction" id="updateshutdownsh">
+            <condition id="Feature Active" type="com.verisign.wsproxy.installer.TGServerSelectedCondition">
+                <property name="evaluate">1</property>
+                <property name="immutable">False</property>
+            </condition>
+            <property name="displayName">ASCII File Update Wizard Action</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="cancelable">False</property>
+            <property name="asciiFile">$P(absoluteInstallLocation)/bin/shutdown.sh</property>
+            <property name="commentChars"/>
+            <property name="rebootRequired">False</property>
+            <property array="True" length="4" name="actions" type="com.installshield.wizardx.ascii.Update">
+                <arrayItem type="com.installshield.wizardx.ascii.SearchLine">
+                    <property array="True" length="1" name="tokens" type="string">
+                        <arrayItem>TRUSTGATEWAY_HOME=../</arrayItem>
+                    </property>
+                    <property name="respectCase">False</property>
+                    <property name="occurrenceFrequency">0</property>
+                    <property name="returnPosition">0</property>
+                    <property name="tokensNotFound">2</property>
+                    <property name="ignoreCommentLines">True</property>
+                </arrayItem>
+                <arrayItem type="com.installshield.wizardx.ascii.ReplaceLine">
+                    <property name="replaceOption">0</property>
+                    <property name="oldLine"/>
+                    <property array="True" length="1" name="newLines" type="string">
+                        <arrayItem>TRUSTGATEWAY_HOME=$P(absoluteInstallLocation)</arrayItem>
+                    </property>
+                </arrayItem>
+                <arrayItem type="com.installshield.wizardx.ascii.SearchLine">
+                    <property array="True" length="1" name="tokens" type="string">
+                        <arrayItem>JAVA_HOME=../jvm1.4.1.2</arrayItem>
+                    </property>
+                    <property name="respectCase">False</property>
+                    <property name="occurrenceFrequency">0</property>
+                    <property name="returnPosition">0</property>
+                    <property name="tokensNotFound">2</property>
+                    <property name="ignoreCommentLines">True</property>
+                </arrayItem>
+                <arrayItem type="com.installshield.wizardx.ascii.ReplaceLine">
+                    <property name="replaceOption">0</property>
+                    <property name="oldLine">JAVA_HOME=../jvm1.4.1.2</property>
+                    <property array="True" length="1" name="newLines" type="string">
+                        <arrayItem>JAVA_HOME=$P(absoluteInstallLocation)/jvm1.4.1.2</arrayItem>
+                    </property>
+                </arrayItem>
+            </property>
+            <property name="backupAsciiFile">False</property>
+            <property name="overwriteExistingFile">False</property>
+        </wizardBean>
+        <wizardBean class="com.installshield.wizardx.actions.AsciiFileUpdateWizardAction" id="updatestartupbat">
+            <condition id="Feature Active" type="com.verisign.wsproxy.installer.TGServerSelectedCondition">
+                <property name="evaluate">1</property>
+                <property name="immutable">False</property>
+            </condition>
+            <property name="displayName">ASCII File Update Wizard Action</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="cancelable">False</property>
+            <property name="asciiFile">$P(absoluteInstallLocation)/bin/startup.bat</property>
+            <property name="commentChars"/>
+            <property name="rebootRequired">False</property>
+            <property array="True" length="2" name="actions" type="com.installshield.wizardx.ascii.Update">
+                <arrayItem type="com.installshield.wizardx.ascii.SearchLine">
+                    <property array="True" length="1" name="tokens" type="string">
+                        <arrayItem>set TRUSTGATEWAY_HOME=..</arrayItem>
+                    </property>
+                    <property name="respectCase">False</property>
+                    <property name="occurrenceFrequency">0</property>
+                    <property name="returnPosition">0</property>
+                    <property name="tokensNotFound">2</property>
+                    <property name="ignoreCommentLines">True</property>
+                </arrayItem>
+                <arrayItem type="com.installshield.wizardx.ascii.ReplaceLine">
+                    <property name="replaceOption">0</property>
+                    <property name="oldLine"/>
+                    <property array="True" length="1" name="newLines" type="string">
+                        <arrayItem>set TRUSTGATEWAY_HOME=$P(absoluteInstallLocation)</arrayItem>
+                    </property>
+                </arrayItem>
+            </property>
+            <property name="backupAsciiFile">False</property>
+            <property name="overwriteExistingFile">False</property>
+        </wizardBean>
+        <wizardBean class="com.installshield.wizardx.actions.AsciiFileUpdateWizardAction" id="updateshutdownbat">
+            <condition id="Feature Active" type="com.verisign.wsproxy.installer.TGServerSelectedCondition">
+                <property name="evaluate">1</property>
+                <property name="immutable">False</property>
+            </condition>
+            <property name="displayName">ASCII File Update Wizard Action</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="cancelable">False</property>
+            <property name="asciiFile">$P(absoluteInstallLocation)/bin/shutdown.bat</property>
+            <property name="commentChars"/>
+            <property name="rebootRequired">False</property>
+            <property array="True" length="2" name="actions" type="com.installshield.wizardx.ascii.Update">
+                <arrayItem type="com.installshield.wizardx.ascii.SearchLine">
+                    <property array="True" length="1" name="tokens" type="string">
+                        <arrayItem>set TRUSTGATEWAY_HOME=..</arrayItem>
+                    </property>
+                    <property name="respectCase">False</property>
+                    <property name="occurrenceFrequency">0</property>
+                    <property name="returnPosition">0</property>
+                    <property name="tokensNotFound">2</property>
+                    <property name="ignoreCommentLines">True</property>
+                </arrayItem>
+                <arrayItem type="com.installshield.wizardx.ascii.ReplaceLine">
+                    <property name="replaceOption">0</property>
+                    <property name="oldLine"/>
+                    <property array="True" length="1" name="newLines" type="string">
+                        <arrayItem>set TRUSTGATEWAY_HOME=$P(absoluteInstallLocation)</arrayItem>
+                    </property>
+                </arrayItem>
+            </property>
+            <property name="backupAsciiFile">False</property>
+            <property name="overwriteExistingFile">False</property>
+        </wizardBean>
+        <wizardBean class="com.installshield.wizardx.actions.AsciiFileUpdateWizardAction" id="updategatewayxml">
+            <condition id="Feature Active" type="com.verisign.wsproxy.installer.TGServerSelectedCondition">
+                <property name="evaluate">1</property>
+                <property name="immutable">False</property>
+            </condition>
+            <property name="displayName">ASCII File Update Wizard Action</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="cancelable">False</property>
+            <property name="asciiFile">$P(absoluteInstallLocation)/webapps/gateway/gateway.xml</property>
+            <property name="commentChars"/>
+            <property name="rebootRequired">False</property>
+            <property array="True" length="2" name="actions" type="com.installshield.wizardx.ascii.Update">
+                <arrayItem type="com.installshield.wizardx.ascii.SearchLine">
+                    <property array="True" length="1" name="tokens" type="string">
+                        <arrayItem>8776</arrayItem>
+                    </property>
+                    <property name="respectCase">False</property>
+                    <property name="occurrenceFrequency">0</property>
+                    <property name="returnPosition">2</property>
+                    <property name="tokensNotFound">2</property>
+                    <property name="ignoreCommentLines">True</property>
+                </arrayItem>
+                <arrayItem type="com.installshield.wizardx.ascii.ReplaceLine">
+                    <property name="replaceOption">1</property>
+                    <property name="oldLine">8776</property>
+                    <property array="True" length="1" name="newLines" type="string">
+                        <arrayItem>$W(portSelectionBean.Port)</arrayItem>
+                    </property>
+                </arrayItem>
+            </property>
+            <property name="backupAsciiFile">False</property>
+            <property name="overwriteExistingFile">False</property>
+        </wizardBean>
+        <wizardBean class="com.verisign.wsproxy.installer.CopyLicense" id="CopyLicense">
+            <property name="displayName">Copy License</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="cancelable">False</property>
+        </wizardBean>
+        <wizardBean class="com.verisign.wsproxy.installer.WriteAdminPage" id="WriteAdminPage">
+            <property name="displayName">Write Admin Page</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="cancelable">False</property>
+        </wizardBean>
+        <wizardBean class="com.verisign.wsproxy.installer.CreateUserAndSign" id="CreateUserAndSign">
+            <property name="displayName">Create user and sign gateway.xml</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="cancelable">False</property>
+        </wizardBean>
+        <wizardBean class="com.verisign.wsproxy.installer.WSSecurityInstall" id="WSSecurityInstall">
+            <condition id="Feature Active2" type="com.verisign.wsproxy.installer.WSSecuritySelectedCondition">
+                <property name="evaluate">1</property>
+                <property name="immutable">False</property>
+            </condition>
+            <property name="displayName">WS Security Install</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="cancelable">False</property>
+        </wizardBean>
+        <wizardBean class="com.verisign.wsproxy.installer.SetRebootRequired" id="setRebootRequired">
+            <condition id="Feature Active" type="com.verisign.wsproxy.installer.WindowsServiceSelectedCondition">
+                <property name="evaluate">1</property>
+                <property name="immutable">False</property>
+            </condition>
+            <condition id="platform" type="com.installshield.wizardx.conditions.PlatformWizardBeanCondition">
+                <property name="evaluate">1</property>
+                <property name="platform" type="com.installshield.util.Platform">
+                    <property name="arch">.</property>
+                    <property name="displayName">Windows (All)</property>
+                    <property name="name">Windows .*</property>
+                    <property name="version">.</property>
+                </property>
+                <property name="immutable">True</property>
+            </condition>
+            <property name="displayName">Set Reboot Required</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="cancelable">False</property>
+        </wizardBean>
+        <wizardBean class="com.installshield.product.wizardbeans.ReadmePanel" id="readmePanel">
+            <property name="displayName">Readme Panel</property>
+            <property name="active">True</property>
+            <property name="buildCategories"/>
+            <property name="title"/>
+            <property name="description">$L(com.installshield.wizardx.i18n.WizardXResources, TextDisplayPanel.description)</property>
+            <property name="navigationOptions">0</property>
+            <property name="text">$L(com.installshield.wizardx.i18n.WizardXResources, TextDisplayPanel.text)</property>
+            <property name="textSource">2</property>
+            <property name="fileName">/home/nightly/wsproxy/installer/dist/TrustGateway/README.txt</property>
+            <property name="fileEncoding"/>
+            <property name="resolveFileContents">False</property>
+            <property name="includeLocalizedFiles">False</property>
+            <property name="contentType">1</property>
+            <property name="showBorder">True</property>
+        </wizardBean>
+        <wizardBean class="com.installshield.wizardx.panels.RebootPanel" id="rebootPanel">
+            <condition id="platform" type="com.installshield.wizardx.conditions.PlatformWizardBeanCondition">
+                <property name="evaluate">1</property>
+                <property name="platform" type="com.installshield.util.Platform">
+                    <property name="arch">.</property>
+                    <property name="displayName">Windows (All)</property>
+                    <property name="name">Windows .*</property>
+                    <property name="version">.</property>
+                </property>
+                <property name="immutable">True</property>
+            </condition>
+            <condition id="Feature Active" type="com.verisign.wsproxy.installer.WindowsServiceSelectedCondition">
+                <property name="evaluate">1</property>
+                <property name="immutable">False</property>
+            </condition>
+            <property name="displayName">Reboot Panel</property>
+            <property name="buildCategories"/>
+            <property name="title"/>
+            <property name="description"/>
+            <property name="navigationOptions">0</property>
+            <property name="active">True</property>
+            <property name="restartWizard">False</property>
+        </wizardBean>
+    </wizardRoot>
+</wizardTree>

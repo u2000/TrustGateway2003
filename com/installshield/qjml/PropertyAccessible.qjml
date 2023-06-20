@@ -1,0 +1,41 @@
+<qjml root="object">
+
+	<element name="object">
+		<targetFactory>com.installshield.qjml.QObjectTF</targetFactory>
+		<attribute name="class" type="string" status="REQUIRED" class="com.installshield.qjml.QObjectAccess"/>
+		<child 
+				element="property" 
+				class="com.installshield.qjml.QObjectPropertyAccess" 
+				optional="True" 
+				repeating="True"/>
+	</element>
+	
+	<element name="property" content="BIMODAL">
+		<targetClass>com.installshield.qjml.QProperty</targetClass>
+		<attribute name="name" type="string" status="REQUIRED" property="name"/>
+		<attribute name="type" type="string" property="type" value=""/>
+		<attribute name="array" type="boolean" property="array" value="False"/>
+		<attribute name="length" type="int" property="arrayLength" value="-1"/>
+		<child 
+			element="property"
+			class="com.installshield.qjml.QPropertyAccess"
+			optional="True"
+			repeating="True"/>
+		<child 
+			element="arrayItem"
+			class="com.installshield.qjml.QArrayItemAccess"
+			optional="True"
+			repeating="True"/>
+	</element>
+	
+	<element name="arrayItem" content="BIMODAL">
+		<targetClass>com.installshield.qjml.QArrayItem</targetClass>
+		<attribute name="type" type="string" property="type" value=""/>
+		<child
+				element="property"
+				class="com.installshield.qjml.QPropertyAccess"
+				optional="True"
+				repeating="True"/>		
+	</element>
+	
+</qjml>
