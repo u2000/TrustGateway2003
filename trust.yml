@@ -1,8 +1,8 @@
 trust:
   belongto:
     - 'noosphere.tech'
-  contact: 'https://www.noosphere.tech/contact/'
-publickey: 'https://www.noosphere.tech.com/public-key.did'
+  contact: 'https://www.noosphere.tech/contact'
+publickey: 'https://www.noosphere.tech.com/.well-known/public-key.did'
 canonicalizationalgorithm: SORTED_ASCII
 signaturealgorithm: RSA-SHA256
 signature: ec3f16831839a67295202f88d9878f2b0ce1aa79e9cd667e721512ca8b1d
